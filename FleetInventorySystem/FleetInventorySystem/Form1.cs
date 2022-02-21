@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FleetInventorySystem
 {
@@ -15,8 +16,12 @@ namespace FleetInventorySystem
         public Form1()
         {
             InitializeComponent();
-        }
 
+            
+
+
+        }
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -28,6 +33,11 @@ namespace FleetInventorySystem
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void uC_Login1_Load(object sender, EventArgs e)
         {
 
         }
