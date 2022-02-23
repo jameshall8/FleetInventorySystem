@@ -66,6 +66,7 @@
             this.comboSelectEdit.Name = "comboSelectEdit";
             this.comboSelectEdit.Size = new System.Drawing.Size(121, 21);
             this.comboSelectEdit.TabIndex = 2;
+            this.comboSelectEdit.SelectedIndexChanged += new System.EventHandler(this.comboSelectEdit_SelectedIndexChanged);
             // 
             // btnSelectEdit
             // 

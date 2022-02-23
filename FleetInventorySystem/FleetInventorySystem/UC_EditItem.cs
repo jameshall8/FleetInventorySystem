@@ -12,9 +12,23 @@ namespace FleetInventorySystem
 {
     public partial class UC_EditItem : UserControl
     {
+        String partname;
         public UC_EditItem()
         {
             InitializeComponent();
+
+
+        }
+
+        private void UC_EditItem_Load(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void lblProductName_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

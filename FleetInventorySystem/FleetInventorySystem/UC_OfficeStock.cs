@@ -13,6 +13,10 @@ namespace FleetInventorySystem
 {
     public partial class UC_OfficeStock : UserControl
     {
+        static string editChoice = "";
+        UserControl EditItemUC = null;
+
+        public static string EditChoice { get => editChoice; set => editChoice = value; }
 
         public UC_OfficeStock(string lastName, string firstName)
         {
@@ -33,6 +37,8 @@ namespace FleetInventorySystem
             dgvOfficeStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             Form1.Conn.Close();
+
+            fillEditCombo();
         }
 
         private  void btnSelectEdit_Click(object sender, EventArgs e)
@@ -43,8 +49,15 @@ namespace FleetInventorySystem
             }
             else
             {
-                Form1.CloseUserControls(Form1.Array);
-                Form1.showPage(Form1.EditItemUC);
+                if (comboSelectEdit != null)
+                {
+                    EditChoice = comboSelectEdit.Text;
+                    
+                    
+                    Form1.CloseUserControls(Form1.Array);
+                    Form1.EditItemUC.Show();
+                }
+                
             }
 
 
@@ -86,9 +99,6 @@ namespace FleetInventorySystem
 
             try
             {
-                
-                   
-                  
                     Form1.Conn.Open();
 
                     
@@ -108,6 +118,32 @@ namespace FleetInventorySystem
             {
                 MessageBox.Show(except.Message);
             }
+        }
+
+        private void comboSelectEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        void fillEditCombo()
+        {
+            Form1.Conn.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT name FROM OfficeParts", Form1.Conn);
+            SqlDataReader Sdr = cmd.ExecuteReader();
+
+            while (Sdr.Read())
+            {
+                for (int i = 0; i < Sdr.FieldCount; i++)
+                {
+                    comboSelectEdit.Items.Add(Sdr.GetString(i));
+                }
+            }
+            Sdr.Close();
+            Form1.Conn.Close();
+
+
+
         }
     }
     }

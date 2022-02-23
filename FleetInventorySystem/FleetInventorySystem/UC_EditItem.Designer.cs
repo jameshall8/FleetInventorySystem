@@ -56,6 +56,7 @@
             this.lblProductName.Size = new System.Drawing.Size(86, 25);
             this.lblProductName.TabIndex = 6;
             this.lblProductName.Text = "Product";
+            this.lblProductName.Click += new System.EventHandler(this.lblProductName_Click);
             // 
             // btnEditItem
             // 
@@ -213,6 +214,7 @@
             this.Controls.Add(this.lblProductName);
             this.Name = "UC_EditItem";
             this.Size = new System.Drawing.Size(699, 538);
+            this.Load += new System.EventHandler(this.UC_EditItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

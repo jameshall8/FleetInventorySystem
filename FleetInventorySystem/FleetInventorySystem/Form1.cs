@@ -104,7 +104,7 @@ namespace FleetInventorySystem
             ReorderUC = new UC_Reorder();
             Controls.Add(ReorderUC);
 
-            UserControl[] UCs = { NewUserUC, Home, EditItemUC, AddItemUC, AssignStockUC, FleetUC, OfficeStockUC, ReorderUC };
+            UserControl[] UCs = { NewUserUC, Home, editItemUC, AddItemUC, AssignStockUC, FleetUC, OfficeStockUC, ReorderUC };
             Array = UCs;
 
             CloseUserControls(Array);
@@ -208,6 +208,11 @@ namespace FleetInventorySystem
         {
             CloseUserControls(Array);
             Home.Show();
+        }
+
+        private void uC_HomeDashboard1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -37,7 +37,6 @@ namespace FleetInventorySystem
             this.btnFleet = new System.Windows.Forms.Button();
             this.btnOfficeStock = new System.Windows.Forms.Button();
             this.lblNav = new System.Windows.Forms.Label();
-            this.lblTest = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
             this.usernameLbl = new System.Windows.Forms.Label();
@@ -46,14 +45,13 @@ namespace FleetInventorySystem
             this.usernameTxt = new System.Windows.Forms.TextBox();
             this.loginLbl = new System.Windows.Forms.Label();
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.uC_OfficeStock1 = new FleetInventorySystem.UC_OfficeStock();
             this.uC_Reorder1 = new FleetInventorySystem.UC_Reorder();
             this.uC_Fleet1 = new FleetInventorySystem.UC_Fleet();
-            this.uC_EditItem1 = new FleetInventorySystem.UC_EditItem();
-            this.uC_AssignStock1 = new FleetInventorySystem.UC_AssignStock();
-            this.uC_AddItem1 = new FleetInventorySystem.UC_AddItem();
-            this.uC_OfficeStock1 = new FleetInventorySystem.UC_OfficeStock();
             this.uC_NewUser1 = new FleetInventorySystem.UC_NewUser();
             this.uC_HomeDashboard1 = new FleetInventorySystem.UC_HomeDashboard();
+            this.uC_AssignStock1 = new FleetInventorySystem.UC_AssignStock();
+            this.uC_AddItem1 = new FleetInventorySystem.UC_AddItem();
             this.navPanel.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             this.SuspendLayout();
@@ -133,15 +131,6 @@ namespace FleetInventorySystem
             this.lblNav.Text = "Inventory System";
             this.lblNav.Click += new System.EventHandler(this.lblNav_Click);
             // 
-            // lblTest
-            // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Location = new System.Drawing.Point(402, 346);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(35, 13);
-            this.lblTest.TabIndex = 27;
-            this.lblTest.Text = "label2";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -207,30 +196,36 @@ namespace FleetInventorySystem
             // 
             // pnlLogin
             // 
-            this.pnlLogin.Controls.Add(this.uC_OfficeStock1);
-            this.pnlLogin.Controls.Add(this.uC_NewUser1);
-            this.pnlLogin.Controls.Add(this.passwordTxt);
-            this.pnlLogin.Controls.Add(this.lblTest);
+            this.pnlLogin.Controls.Add(this.uC_AddItem1);
             this.pnlLogin.Controls.Add(this.loginLbl);
+            this.pnlLogin.Controls.Add(this.passwordTxt);
             this.pnlLogin.Controls.Add(this.label1);
             this.pnlLogin.Controls.Add(this.usernameTxt);
             this.pnlLogin.Controls.Add(this.loginBtn);
             this.pnlLogin.Controls.Add(this.passwordLbl);
             this.pnlLogin.Controls.Add(this.usernameLbl);
-            this.pnlLogin.Controls.Add(this.uC_HomeDashboard1);
+            this.pnlLogin.Controls.Add(this.uC_OfficeStock1);
             this.pnlLogin.Controls.Add(this.uC_Reorder1);
             this.pnlLogin.Controls.Add(this.uC_Fleet1);
-            this.pnlLogin.Controls.Add(this.uC_EditItem1);
+            this.pnlLogin.Controls.Add(this.uC_NewUser1);
+            this.pnlLogin.Controls.Add(this.uC_HomeDashboard1);
             this.pnlLogin.Controls.Add(this.uC_AssignStock1);
-            this.pnlLogin.Controls.Add(this.uC_AddItem1);
             this.pnlLogin.Location = new System.Drawing.Point(108, 0);
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(727, 492);
             this.pnlLogin.TabIndex = 28;
             // 
+            // uC_OfficeStock1
+            // 
+            this.uC_OfficeStock1.Location = new System.Drawing.Point(-4, 0);
+            this.uC_OfficeStock1.Name = "uC_OfficeStock1";
+            this.uC_OfficeStock1.Size = new System.Drawing.Size(727, 496);
+            this.uC_OfficeStock1.TabIndex = 30;
+            this.uC_OfficeStock1.Visible = false;
+            // 
             // uC_Reorder1
             // 
-            this.uC_Reorder1.Location = new System.Drawing.Point(-3, 0);
+            this.uC_Reorder1.Location = new System.Drawing.Point(0, 0);
             this.uC_Reorder1.Name = "uC_Reorder1";
             this.uC_Reorder1.Size = new System.Drawing.Size(615, 500);
             this.uC_Reorder1.TabIndex = 35;
@@ -244,13 +239,22 @@ namespace FleetInventorySystem
             this.uC_Fleet1.TabIndex = 34;
             this.uC_Fleet1.Visible = false;
             // 
-            // uC_EditItem1
+            // uC_NewUser1
             // 
-            this.uC_EditItem1.Location = new System.Drawing.Point(-3, 0);
-            this.uC_EditItem1.Name = "uC_EditItem1";
-            this.uC_EditItem1.Size = new System.Drawing.Size(727, 492);
-            this.uC_EditItem1.TabIndex = 33;
-            this.uC_EditItem1.Visible = false;
+            this.uC_NewUser1.Location = new System.Drawing.Point(-4, 8);
+            this.uC_NewUser1.Name = "uC_NewUser1";
+            this.uC_NewUser1.Size = new System.Drawing.Size(727, 492);
+            this.uC_NewUser1.TabIndex = 29;
+            this.uC_NewUser1.Visible = false;
+            // 
+            // uC_HomeDashboard1
+            // 
+            this.uC_HomeDashboard1.Location = new System.Drawing.Point(-14, 0);
+            this.uC_HomeDashboard1.Name = "uC_HomeDashboard1";
+            this.uC_HomeDashboard1.Size = new System.Drawing.Size(741, 492);
+            this.uC_HomeDashboard1.TabIndex = 28;
+            this.uC_HomeDashboard1.Visible = false;
+            this.uC_HomeDashboard1.Load += new System.EventHandler(this.uC_HomeDashboard1_Load);
             // 
             // uC_AssignStock1
             // 
@@ -262,35 +266,11 @@ namespace FleetInventorySystem
             // 
             // uC_AddItem1
             // 
-            this.uC_AddItem1.Location = new System.Drawing.Point(0, 3);
+            this.uC_AddItem1.Location = new System.Drawing.Point(-4, 0);
             this.uC_AddItem1.Name = "uC_AddItem1";
-            this.uC_AddItem1.Size = new System.Drawing.Size(727, 492);
-            this.uC_AddItem1.TabIndex = 31;
+            this.uC_AddItem1.Size = new System.Drawing.Size(647, 472);
+            this.uC_AddItem1.TabIndex = 36;
             this.uC_AddItem1.Visible = false;
-            // 
-            // uC_OfficeStock1
-            // 
-            this.uC_OfficeStock1.Location = new System.Drawing.Point(-4, 0);
-            this.uC_OfficeStock1.Name = "uC_OfficeStock1";
-            this.uC_OfficeStock1.Size = new System.Drawing.Size(727, 496);
-            this.uC_OfficeStock1.TabIndex = 30;
-            this.uC_OfficeStock1.Visible = false;
-            // 
-            // uC_NewUser1
-            // 
-            this.uC_NewUser1.Location = new System.Drawing.Point(148, 307);
-            this.uC_NewUser1.Name = "uC_NewUser1";
-            this.uC_NewUser1.Size = new System.Drawing.Size(727, 492);
-            this.uC_NewUser1.TabIndex = 29;
-            this.uC_NewUser1.Visible = false;
-            // 
-            // uC_HomeDashboard1
-            // 
-            this.uC_HomeDashboard1.Location = new System.Drawing.Point(77, 220);
-            this.uC_HomeDashboard1.Name = "uC_HomeDashboard1";
-            this.uC_HomeDashboard1.Size = new System.Drawing.Size(741, 492);
-            this.uC_HomeDashboard1.TabIndex = 28;
-            this.uC_HomeDashboard1.Visible = false;
             // 
             // Form1
             // 
@@ -320,7 +300,6 @@ namespace FleetInventorySystem
         private Button btnFleet;
         private Button btnOfficeStock;
         private Label lblNav;
-        private Label lblTest;
         private Label label1;
         private Button loginBtn;
         private Label usernameLbl;
