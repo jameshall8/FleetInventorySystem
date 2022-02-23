@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FleetInventorySystem
 {
-    public partial class UC_viewManagement : UserControl
+    public partial class UC_AddItem : UserControl
     {
-        public UC_viewManagement()
+        public UC_AddItem()
         {
             InitializeComponent();
         }

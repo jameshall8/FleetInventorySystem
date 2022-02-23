@@ -8,9 +8,9 @@ namespace FleetInventorySystem
 {
     class User
     {
-        String username;
-        String password;
-        String role;
+        private String username;
+        private String password;
+        private String role;
 
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }

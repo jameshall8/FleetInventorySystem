@@ -8,10 +8,12 @@ namespace FleetInventorySystem
 {
     class Van
     {
-        String vanName;
-        String registration;
-        String allocatedDriver;
+        private String vanName;
+        private String registration;
+        private String allocatedDriver;
 
-
+        public string VanName { get => vanName; set => vanName = value; }
+        public string Registration { get => registration; set => registration = value; }
+        public string AllocatedDriver { get => allocatedDriver; set => allocatedDriver = value; }
     }
 }
