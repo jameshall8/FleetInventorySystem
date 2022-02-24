@@ -15,6 +15,7 @@ namespace FleetInventorySystem
     {
         String supplierEmail, partname;
         int maxStock, currentStock, restockTime, barcodeNumber;
+        bool updated = false;
 
         List<String> arrayRows = new List<String>();
         private SqlCommand sqlComm;
@@ -38,9 +39,19 @@ namespace FleetInventorySystem
         private void btnEditItem_Click(object sender, EventArgs e)
         {
             updatePart();
+            if (updated == true)
+            {
+                MessageBox.Show("Item Updated Successfully");
+
+            }
+            else
+            {
+                MessageBox.Show("Refill values and try again");
+
+            }
         }
 
-        private void getValuesToVariables()
+        public void getValuesToVariables()
         {
             String stmt = "SELECT name, maxStock, currentStock, restockTime, supplierEmail FROM OfficeParts WHERE barcodeNumber = '" + barcodeNumber + "'";
             SqlDataAdapter sqlDa = new SqlDataAdapter(stmt, Form1.Conn);
@@ -67,32 +78,49 @@ namespace FleetInventorySystem
 
         private void updatePart()
         {
-            getNewValues();
-            Form1.Conn.Open();
-            sqlComm = new SqlCommand("UPDATE OfficeParts SET name=@partName, maxStock=@maxStock, currentStock=@currentStock, restockTime=@restockTime, supplierEmail=@supplierEmail WHERE barcodeNumber=@barcodeNumber", Form1.Conn);
+            try
+            {
+                getNewValues();
+                Form1.Conn.Open();
+                sqlComm = new SqlCommand("UPDATE OfficeParts SET name=@partName, maxStock=@maxStock, currentStock=@currentStock, restockTime=@restockTime, supplierEmail=@supplierEmail WHERE barcodeNumber=@barcodeNumber", Form1.Conn);
 
-            sqlComm.Parameters.AddWithValue("@partName", partname);
-            sqlComm.Parameters.AddWithValue("@maxStock", maxStock);
-            sqlComm.Parameters.AddWithValue("@currentStock", currentStock);
-            sqlComm.Parameters.AddWithValue("@restockTime", restockTime);
-            sqlComm.Parameters.AddWithValue("@supplierEmail", supplierEmail);
-            sqlComm.Parameters.AddWithValue("@barcodeNumber", barcodeNumber);
+                sqlComm.Parameters.AddWithValue("@partName", partname);
+                sqlComm.Parameters.AddWithValue("@maxStock", maxStock);
+                sqlComm.Parameters.AddWithValue("@currentStock", currentStock);
+                sqlComm.Parameters.AddWithValue("@restockTime", restockTime);
+                sqlComm.Parameters.AddWithValue("@supplierEmail", supplierEmail);
+                sqlComm.Parameters.AddWithValue("@barcodeNumber", barcodeNumber);
 
 
-            sqlComm.ExecuteNonQuery();
+                sqlComm.ExecuteNonQuery();
+                updated = true;
 
-            Form1.Conn.Close();
+                Form1.Conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                updated = false;
+            }
+            
 
-        }
+            }
 
         private void getNewValues()
         {
-            partname = txtName.Text;
-            maxStock = Convert.ToInt32(txtMax.Text);
-            currentStock = Convert.ToInt32(txtCurrent.Text);
-            restockTime = Convert.ToInt32(txtReorder.Text);
-            supplierEmail = txtEmail.Text;
-            barcodeNumber = Convert.ToInt32(txtBarcode.Text);
+            try
+            {
+                partname = txtName.Text;
+                maxStock = Convert.ToInt32(txtMax.Text);
+                currentStock = Convert.ToInt32(txtCurrent.Text);
+                restockTime = Convert.ToInt32(txtReorder.Text);
+                supplierEmail = txtEmail.Text;
+                barcodeNumber = Convert.ToInt32(txtBarcode.Text);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Please check your inputs are the correct value type");
+            }
         }
 
 

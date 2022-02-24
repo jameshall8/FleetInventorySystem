@@ -8,19 +8,23 @@ namespace FleetInventorySystem
 {
     class Part
     {
-        private String name;
+        private String partname;
 
         private int barcode;
-        private int maxStockLevel;
+        private int maxStock;
         private int currentStock;
         private int restockTime;
-        private String SupplierEmail;
+        private String supplierEmail;
 
-        public string Name { get => name; set => name = value; }
+        public string Name { get => partname; set => partname = value; }
         public int Barcode { get => barcode; set => barcode = value; }
-        public int MaxStockLevel { get => maxStockLevel; set => maxStockLevel = value; }
+        public int MaxStock { get => maxStock; set => maxStock = value; }
         public int CurrentStock { get => currentStock; set => currentStock = value; }
         public int RestockTime { get => restockTime; set => restockTime = value; }
-        public string SupplierEmail1 { get => SupplierEmail; set => SupplierEmail = value; }
+        public string SupplierEmail { get => supplierEmail; set => supplierEmail = value; }
+
+
+
     }
+
 }

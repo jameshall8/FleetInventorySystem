@@ -18,10 +18,7 @@ namespace FleetInventorySystem
 
         public static string EditChoice { get => editChoice; set => editChoice = value; }
 
-        public UC_OfficeStock(string lastName, string firstName)
-        {
-
-        }
+        
         public UC_OfficeStock()
         {
             InitializeComponent();
@@ -110,19 +107,31 @@ namespace FleetInventorySystem
         private void btnPopulate_Click(object sender, EventArgs e)
         {
 
+            refreshTable();
+        }
+
+        private void comboSelectEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void refreshTable()
+        {
             try
             {
-                    Form1.Conn.Open();
+                comboSelectEdit.SelectedItem = null;
 
-                    
-                    SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM OfficeParts", Form1.Conn);
-                    DataTable dtbl = new DataTable();
-                    sqlDa.Fill(dtbl);
+                Form1.Conn.Open();
 
-                    dgvOfficeStock.DataSource = dtbl;
-                    dgvOfficeStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                    Form1.Conn.Close();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM OfficeParts", Form1.Conn);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                dgvOfficeStock.DataSource = dtbl;
+                dgvOfficeStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                Form1.Conn.Close();
 
 
 
@@ -132,11 +141,7 @@ namespace FleetInventorySystem
                 MessageBox.Show(except.Message);
             }
         }
-
-        private void comboSelectEdit_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+    
 
         void fillEditCombo()
         {
@@ -160,4 +165,5 @@ namespace FleetInventorySystem
         }
     }
     }
+
 
