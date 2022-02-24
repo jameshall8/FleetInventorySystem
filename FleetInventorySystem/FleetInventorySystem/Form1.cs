@@ -175,7 +175,6 @@ namespace FleetInventorySystem
         private void btnOfficeStock_Click(object sender, EventArgs e)
         {
             {
-               
 
                 CloseUserControls(Array);
                 OfficeStockUC.Show();

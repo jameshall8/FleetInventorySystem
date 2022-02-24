@@ -14,7 +14,7 @@ namespace FleetInventorySystem
     public partial class UC_OfficeStock : UserControl
     {
         static string editChoice = "";
-        UserControl EditItemUC = null;
+
 
         public static string EditChoice { get => editChoice; set => editChoice = value; }
 
@@ -49,18 +49,31 @@ namespace FleetInventorySystem
             }
             else
             {
-                if (comboSelectEdit != null)
+                if (comboSelectEdit.SelectedIndex != -1)
                 {
-                    EditChoice = comboSelectEdit.Text;
-                    
-                    
-                    Form1.CloseUserControls(Form1.Array);
-                    Form1.EditItemUC.Show();
+
+                    editChoice = comboSelectEdit.Text;
+                    setUpEditForm();
                 }
+                else
+                {
+                    MessageBox.Show("You need to select an item from the dropdown");
+                }
+                
                 
             }
 
 
+        }
+
+        private void setUpEditForm()
+        {
+            Form1.EditItemUC.BarcodeNumber = Convert.ToInt32(editChoice);
+
+            Form1.EditItemUC.refresh();
+
+            Form1.CloseUserControls(Form1.Array);
+            Form1.EditItemUC.Show();
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)
@@ -129,14 +142,14 @@ namespace FleetInventorySystem
         {
             Form1.Conn.Open();
 
-            SqlCommand cmd = new SqlCommand("SELECT name FROM OfficeParts", Form1.Conn);
+            SqlCommand cmd = new SqlCommand("SELECT barcodeNumber FROM OfficeParts", Form1.Conn);
             SqlDataReader Sdr = cmd.ExecuteReader();
 
             while (Sdr.Read())
             {
                 for (int i = 0; i < Sdr.FieldCount; i++)
                 {
-                    comboSelectEdit.Items.Add(Sdr.GetString(i));
+                    comboSelectEdit.Items.Add(Sdr.GetValue(i));
                 }
             }
             Sdr.Close();

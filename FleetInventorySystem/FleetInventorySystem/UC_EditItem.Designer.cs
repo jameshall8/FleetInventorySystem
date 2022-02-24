@@ -36,12 +36,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtReorder = new System.Windows.Forms.TextBox();
+            this.txtMax = new System.Windows.Forms.TextBox();
+            this.txtCurrent = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.btnReorderProduct = new System.Windows.Forms.Button();
@@ -66,6 +66,7 @@
             this.btnEditItem.TabIndex = 28;
             this.btnEditItem.Text = "Submit Edit";
             this.btnEditItem.UseVisualStyleBackColor = true;
+            this.btnEditItem.Click += new System.EventHandler(this.btnEditItem_Click);
             // 
             // label7
             // 
@@ -121,47 +122,47 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Current Stock Level";
             // 
-            // textBox6
+            // txtEmail
             // 
-            this.textBox6.Location = new System.Drawing.Point(332, 360);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 21;
+            this.txtEmail.Location = new System.Drawing.Point(332, 360);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.TabIndex = 21;
             // 
-            // textBox5
+            // txtBarcode
             // 
-            this.textBox5.Location = new System.Drawing.Point(332, 314);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 20;
+            this.txtBarcode.Location = new System.Drawing.Point(332, 314);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(100, 20);
+            this.txtBarcode.TabIndex = 20;
             // 
-            // textBox4
+            // txtName
             // 
-            this.textBox4.Location = new System.Drawing.Point(332, 271);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 19;
+            this.txtName.Location = new System.Drawing.Point(332, 271);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.TabIndex = 19;
             // 
-            // textBox3
+            // txtReorder
             // 
-            this.textBox3.Location = new System.Drawing.Point(332, 229);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 18;
+            this.txtReorder.Location = new System.Drawing.Point(332, 229);
+            this.txtReorder.Name = "txtReorder";
+            this.txtReorder.Size = new System.Drawing.Size(100, 20);
+            this.txtReorder.TabIndex = 18;
             // 
-            // textBox2
+            // txtMax
             // 
-            this.textBox2.Location = new System.Drawing.Point(332, 178);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 17;
+            this.txtMax.Location = new System.Drawing.Point(332, 178);
+            this.txtMax.Name = "txtMax";
+            this.txtMax.Size = new System.Drawing.Size(100, 20);
+            this.txtMax.TabIndex = 17;
             // 
-            // textBox1
+            // txtCurrent
             // 
-            this.textBox1.Location = new System.Drawing.Point(332, 130);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 16;
+            this.txtCurrent.Location = new System.Drawing.Point(332, 130);
+            this.txtCurrent.Name = "txtCurrent";
+            this.txtCurrent.Size = new System.Drawing.Size(100, 20);
+            this.txtCurrent.TabIndex = 16;
             // 
             // label1
             // 
@@ -204,12 +205,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtBarcode);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtReorder);
+            this.Controls.Add(this.txtMax);
+            this.Controls.Add(this.txtCurrent);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblProductName);
             this.Name = "UC_EditItem";
@@ -230,12 +231,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtBarcode;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtReorder;
+        private System.Windows.Forms.TextBox txtMax;
+        private System.Windows.Forms.TextBox txtCurrent;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDeleteProduct;
         private System.Windows.Forms.Button btnReorderProduct;
