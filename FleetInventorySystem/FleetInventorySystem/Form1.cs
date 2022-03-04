@@ -22,6 +22,7 @@ namespace FleetInventorySystem
         static UC_OfficeStock officeStockUC;
         static UC_Reorder reorderUC;
         static UserControl[] array;
+        static UC_IndividualVan vanUC;
 
         static SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-H5ACLIO\SQLEXPRESS;Initial Catalog=FleetInventory;Integrated Security=True");
 
@@ -38,6 +39,7 @@ namespace FleetInventorySystem
         public static UC_Reorder ReorderUC { get => reorderUC; set => reorderUC = value; }
         public static string Role { get => role; set => role = value; }
         public static SqlConnection Conn { get => conn; set => conn = value; }
+        public static UC_IndividualVan VanUC { get => vanUC; set => vanUC = value; }
 
         public Form1()
         {
@@ -74,37 +76,11 @@ namespace FleetInventorySystem
         
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            NewUserUC = new UC_NewUser();
-            Controls.Add(NewUserUC);
-            role = "Manager";
-
-            Home = new UC_HomeDashboard();
-            Controls.Add(Home);
-
-            EditItemUC = new UC_EditItem();
-            Controls.Add(EditItemUC);
 
 
-            AddItemUC = new UC_AddItem();
-            Controls.Add(AddItemUC);
+            loadUserControls();
 
-
-            AssignStockUC = new UC_AssignStock();
-            Controls.Add(AssignStockUC);
-
-
-            FleetUC = new UC_Fleet();
-            Controls.Add(FleetUC);
-
-
-            OfficeStockUC = new UC_OfficeStock();
-            Controls.Add(OfficeStockUC);
-
-
-            ReorderUC = new UC_Reorder();
-            Controls.Add(ReorderUC);
-
-            UserControl[] UCs = { NewUserUC, Home, editItemUC, AddItemUC, AssignStockUC, FleetUC, OfficeStockUC, ReorderUC };
+            UserControl[] UCs = { NewUserUC, Home, editItemUC, AddItemUC, AssignStockUC, FleetUC, OfficeStockUC, ReorderUC, vanUC };
             Array = UCs;
 
             CloseUserControls(Array);
@@ -213,5 +189,44 @@ namespace FleetInventorySystem
         {
 
         }
+
+        private void loadUserControls()
+        {
+            NewUserUC = new UC_NewUser();
+            Controls.Add(NewUserUC);
+            role = "Manager";
+
+            Home = new UC_HomeDashboard();
+            Controls.Add(Home);
+
+            EditItemUC = new UC_EditItem();
+            Controls.Add(EditItemUC);
+
+
+            AddItemUC = new UC_AddItem();
+            Controls.Add(AddItemUC);
+
+
+            AssignStockUC = new UC_AssignStock();
+            Controls.Add(AssignStockUC);
+
+
+            FleetUC = new UC_Fleet();
+            Controls.Add(FleetUC);
+
+
+            OfficeStockUC = new UC_OfficeStock();
+            Controls.Add(OfficeStockUC);
+
+
+            ReorderUC = new UC_Reorder();
+            Controls.Add(ReorderUC);
+
+            vanUC = new UC_IndividualVan();
+            Controls.Add(vanUC);
+
+        }
+
+
     }
 }

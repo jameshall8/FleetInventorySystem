@@ -63,6 +63,7 @@
             this.btnSelectVan.TabIndex = 11;
             this.btnSelectVan.Text = "View";
             this.btnSelectVan.UseVisualStyleBackColor = true;
+            this.btnSelectVan.Click += new System.EventHandler(this.btnSelectVan_Click);
             // 
             // comboSelectVan
             // 

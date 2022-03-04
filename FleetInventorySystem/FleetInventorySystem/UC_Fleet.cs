@@ -13,6 +13,11 @@ namespace FleetInventorySystem
 {
     public partial class UC_Fleet : UserControl
     {
+
+        static string viewChoice = "";
+
+        public static string AssignChoice { get => viewChoice; set => viewChoice = value; }
+
         public UC_Fleet()
         {
             InitializeComponent();
@@ -94,6 +99,38 @@ namespace FleetInventorySystem
 
         private void comboSelectVan_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnSelectVan_Click(object sender, EventArgs e)
+        {
+            if (Form1.Role != "Manager")
+            {
+                MessageBox.Show("You do not have access to this page");
+            }
+            else
+            {
+                if (comboSelectVan.SelectedIndex != -1)
+                {
+
+                    viewChoice = comboSelectVan.Text;
+                    SetUpVanPage();
+                }
+                else
+                {
+                    MessageBox.Show("You need to select an item from the dropdown");
+                }
+
+
+            }
+
+
+        }
+
+        private void SetUpVanPage()
+        {
+            Form1.CloseUserControls(Form1.Array);
+            Form1.VanUC.Show();
 
         }
     }

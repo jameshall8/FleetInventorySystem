@@ -32,10 +32,10 @@
             this.dgvOfficeStock = new System.Windows.Forms.DataGridView();
             this.btnAssignStockPage = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
-            this.lblSelectEdit = new System.Windows.Forms.Label();
+            this.lblSelectAssign = new System.Windows.Forms.Label();
             this.lblVanName = new System.Windows.Forms.Label();
             this.comboSelectEdit = new System.Windows.Forms.ComboBox();
-            this.btnSelectEdit = new System.Windows.Forms.Button();
+            this.btnSelectAssign = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOfficeStock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,15 +74,15 @@
             this.btnAddItem.Text = "Add Item";
             this.btnAddItem.UseVisualStyleBackColor = true;
             // 
-            // lblSelectEdit
+            // lblSelectAssign
             // 
-            this.lblSelectEdit.AutoSize = true;
-            this.lblSelectEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectEdit.Location = new System.Drawing.Point(523, 149);
-            this.lblSelectEdit.Name = "lblSelectEdit";
-            this.lblSelectEdit.Size = new System.Drawing.Size(192, 25);
-            this.lblSelectEdit.TabIndex = 9;
-            this.lblSelectEdit.Text = "Select Item To Edit";
+            this.lblSelectAssign.AutoSize = true;
+            this.lblSelectAssign.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectAssign.Location = new System.Drawing.Point(523, 149);
+            this.lblSelectAssign.Name = "lblSelectAssign";
+            this.lblSelectAssign.Size = new System.Drawing.Size(220, 25);
+            this.lblSelectAssign.TabIndex = 9;
+            this.lblSelectAssign.Text = "Select Item To Assign";
             // 
             // lblVanName
             // 
@@ -102,14 +102,15 @@
             this.comboSelectEdit.Size = new System.Drawing.Size(121, 21);
             this.comboSelectEdit.TabIndex = 10;
             // 
-            // btnSelectEdit
+            // btnSelectAssign
             // 
-            this.btnSelectEdit.Location = new System.Drawing.Point(581, 224);
-            this.btnSelectEdit.Name = "btnSelectEdit";
-            this.btnSelectEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnSelectEdit.TabIndex = 11;
-            this.btnSelectEdit.Text = "Edit";
-            this.btnSelectEdit.UseVisualStyleBackColor = true;
+            this.btnSelectAssign.Location = new System.Drawing.Point(581, 224);
+            this.btnSelectAssign.Name = "btnSelectAssign";
+            this.btnSelectAssign.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectAssign.TabIndex = 11;
+            this.btnSelectAssign.Text = "Assign";
+            this.btnSelectAssign.UseVisualStyleBackColor = true;
+            this.btnSelectAssign.Click += new System.EventHandler(this.btnSelectAssign_Click);
             // 
             // UC_IndividualVan
             // 
@@ -119,9 +120,9 @@
             this.Controls.Add(this.dgvOfficeStock);
             this.Controls.Add(this.btnAssignStockPage);
             this.Controls.Add(this.btnAddItem);
-            this.Controls.Add(this.btnSelectEdit);
+            this.Controls.Add(this.btnSelectAssign);
             this.Controls.Add(this.comboSelectEdit);
-            this.Controls.Add(this.lblSelectEdit);
+            this.Controls.Add(this.lblSelectAssign);
             this.Controls.Add(this.lblVanName);
             this.Name = "UC_IndividualVan";
             this.Size = new System.Drawing.Size(787, 577);
@@ -137,9 +138,9 @@
         private System.Windows.Forms.DataGridView dgvOfficeStock;
         private System.Windows.Forms.Button btnAssignStockPage;
         private System.Windows.Forms.Button btnAddItem;
-        private System.Windows.Forms.Label lblSelectEdit;
+        private System.Windows.Forms.Label lblSelectAssign;
         private System.Windows.Forms.Label lblVanName;
         private System.Windows.Forms.ComboBox comboSelectEdit;
-        private System.Windows.Forms.Button btnSelectEdit;
+        private System.Windows.Forms.Button btnSelectAssign;
     }
 }
