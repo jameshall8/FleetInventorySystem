@@ -32,6 +32,8 @@ namespace FleetInventorySystem
             }
             else
             {
+                added = false;
+
                 MessageBox.Show("You must fill in every section");
             }
             
@@ -101,6 +103,8 @@ namespace FleetInventorySystem
             catch (Exception e)
             {
                 MessageBox.Show("Please check your inputs are the correct value type");
+                added = false;
+
                 return null;
             }
         }

@@ -71,6 +71,7 @@
             this.comboSelectVan.Name = "comboSelectVan";
             this.comboSelectVan.Size = new System.Drawing.Size(121, 21);
             this.comboSelectVan.TabIndex = 10;
+            this.comboSelectVan.SelectedIndexChanged += new System.EventHandler(this.comboSelectVan_SelectedIndexChanged);
             // 
             // lblSelectVan
             // 

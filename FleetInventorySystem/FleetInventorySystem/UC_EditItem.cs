@@ -81,21 +81,31 @@ namespace FleetInventorySystem
             try
             {
                 getNewValues();
-                Form1.Conn.Open();
-                sqlComm = new SqlCommand("UPDATE OfficeParts SET name=@partName, maxStock=@maxStock, currentStock=@currentStock, restockTime=@restockTime, supplierEmail=@supplierEmail WHERE barcodeNumber=@barcodeNumber", Form1.Conn);
 
-                sqlComm.Parameters.AddWithValue("@partName", partname);
-                sqlComm.Parameters.AddWithValue("@maxStock", maxStock);
-                sqlComm.Parameters.AddWithValue("@currentStock", currentStock);
-                sqlComm.Parameters.AddWithValue("@restockTime", restockTime);
-                sqlComm.Parameters.AddWithValue("@supplierEmail", supplierEmail);
-                sqlComm.Parameters.AddWithValue("@barcodeNumber", barcodeNumber);
+                if (updated == true)
+                {
+                    Form1.Conn.Open();
+                    sqlComm = new SqlCommand("UPDATE OfficeParts SET name=@partName, maxStock=@maxStock, currentStock=@currentStock, restockTime=@restockTime, supplierEmail=@supplierEmail WHERE barcodeNumber=@barcodeNumber", Form1.Conn);
+
+                    sqlComm.Parameters.AddWithValue("@partName", partname);
+                    sqlComm.Parameters.AddWithValue("@maxStock", maxStock);
+                    sqlComm.Parameters.AddWithValue("@currentStock", currentStock);
+                    sqlComm.Parameters.AddWithValue("@restockTime", restockTime);
+                    sqlComm.Parameters.AddWithValue("@supplierEmail", supplierEmail);
+                    sqlComm.Parameters.AddWithValue("@barcodeNumber", barcodeNumber);
 
 
-                sqlComm.ExecuteNonQuery();
-                updated = true;
+                    sqlComm.ExecuteNonQuery();
+                    updated = true;
 
-                Form1.Conn.Close();
+                    Form1.Conn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Please check your inputs are the correct value type");
+
+                }
+
             }
             catch (Exception e)
             {
@@ -119,7 +129,8 @@ namespace FleetInventorySystem
             }
             catch (Exception e)
             {
-                MessageBox.Show("Please check your inputs are the correct value type");
+                updated = false;
+
             }
         }
 

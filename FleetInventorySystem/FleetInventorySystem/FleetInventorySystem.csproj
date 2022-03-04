@@ -97,6 +97,12 @@
     <Compile Include="UC_HomeDashboard.Designer.cs">
       <DependentUpon>UC_HomeDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_IndividualVan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_IndividualVan.Designer.cs">
+      <DependentUpon>UC_IndividualVan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_NewUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_HomeDashboard.resx">
       <DependentUpon>UC_HomeDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_IndividualVan.resx">
+      <DependentUpon>UC_IndividualVan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_NewUser.resx">
       <DependentUpon>UC_NewUser.cs</DependentUpon>
