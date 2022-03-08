@@ -162,6 +162,8 @@ namespace FleetInventorySystem
         {
             CloseUserControls(Array);
             FleetUC.Show();
+            Form1.fleetUC.refreshTable();
+            
         }
 
         private void btnHome_Click(object sender, EventArgs e)

@@ -106,6 +106,7 @@
             this.Controls.Add(this.lblVanTitle);
             this.Name = "UC_Fleet";
             this.Size = new System.Drawing.Size(905, 542);
+            this.Load += new System.EventHandler(this.UC_Fleet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVans)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

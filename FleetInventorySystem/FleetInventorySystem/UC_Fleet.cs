@@ -87,7 +87,8 @@ namespace FleetInventorySystem
                 dgvVans.DataSource = dbl;
                 dgvVans.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 Form1.Conn.Close();
-
+                comboSelectVan.SelectedIndex = -1;
+                
 
 
             }
@@ -115,6 +116,7 @@ namespace FleetInventorySystem
 
                     viewChoice = comboSelectVan.Text;
                     SetUpVanPage();
+                    Form1.VanUC.refreshTable();
                 }
                 else
                 {
@@ -131,6 +133,12 @@ namespace FleetInventorySystem
         {
             Form1.CloseUserControls(Form1.Array);
             Form1.VanUC.Show();
+            Form1.VanUC.Partname1 = comboSelectVan.Text;
+
+        }
+
+        private void UC_Fleet_Load(object sender, EventArgs e)
+        {
 
         }
     }

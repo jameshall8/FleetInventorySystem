@@ -29,56 +29,37 @@
         private void InitializeComponent()
         {
             this.btnPopulate = new System.Windows.Forms.Button();
-            this.dgvOfficeStock = new System.Windows.Forms.DataGridView();
-            this.btnAssignStockPage = new System.Windows.Forms.Button();
-            this.btnAddItem = new System.Windows.Forms.Button();
+            this.dgvIndividual = new System.Windows.Forms.DataGridView();
             this.lblSelectAssign = new System.Windows.Forms.Label();
             this.lblVanName = new System.Windows.Forms.Label();
             this.comboSelectEdit = new System.Windows.Forms.ComboBox();
             this.btnSelectAssign = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOfficeStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIndividual)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPopulate
             // 
-            this.btnPopulate.Location = new System.Drawing.Point(197, 110);
+            this.btnPopulate.Location = new System.Drawing.Point(256, 68);
             this.btnPopulate.Name = "btnPopulate";
             this.btnPopulate.Size = new System.Drawing.Size(141, 23);
             this.btnPopulate.TabIndex = 15;
             this.btnPopulate.Text = "Refresh Table";
             this.btnPopulate.UseVisualStyleBackColor = true;
             // 
-            // dgvOfficeStock
+            // dgvIndividual
             // 
-            this.dgvOfficeStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOfficeStock.Location = new System.Drawing.Point(71, 149);
-            this.dgvOfficeStock.Name = "dgvOfficeStock";
-            this.dgvOfficeStock.Size = new System.Drawing.Size(401, 363);
-            this.dgvOfficeStock.TabIndex = 14;
-            // 
-            // btnAssignStockPage
-            // 
-            this.btnAssignStockPage.Location = new System.Drawing.Point(528, 452);
-            this.btnAssignStockPage.Name = "btnAssignStockPage";
-            this.btnAssignStockPage.Size = new System.Drawing.Size(166, 23);
-            this.btnAssignStockPage.TabIndex = 13;
-            this.btnAssignStockPage.Text = "Go to assign stock page ";
-            this.btnAssignStockPage.UseVisualStyleBackColor = true;
-            // 
-            // btnAddItem
-            // 
-            this.btnAddItem.Location = new System.Drawing.Point(581, 318);
-            this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(75, 23);
-            this.btnAddItem.TabIndex = 12;
-            this.btnAddItem.Text = "Add Item";
-            this.btnAddItem.UseVisualStyleBackColor = true;
+            this.dgvIndividual.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIndividual.Location = new System.Drawing.Point(130, 107);
+            this.dgvIndividual.Name = "dgvIndividual";
+            this.dgvIndividual.Size = new System.Drawing.Size(401, 363);
+            this.dgvIndividual.TabIndex = 14;
+            this.dgvIndividual.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOfficeStock_CellContentClick);
             // 
             // lblSelectAssign
             // 
             this.lblSelectAssign.AutoSize = true;
             this.lblSelectAssign.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectAssign.Location = new System.Drawing.Point(523, 149);
+            this.lblSelectAssign.Location = new System.Drawing.Point(582, 107);
             this.lblSelectAssign.Name = "lblSelectAssign";
             this.lblSelectAssign.Size = new System.Drawing.Size(220, 25);
             this.lblSelectAssign.TabIndex = 9;
@@ -88,7 +69,7 @@
             // 
             this.lblVanName.AutoSize = true;
             this.lblVanName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVanName.Location = new System.Drawing.Point(306, 64);
+            this.lblVanName.Location = new System.Drawing.Point(365, 22);
             this.lblVanName.Name = "lblVanName";
             this.lblVanName.Size = new System.Drawing.Size(128, 25);
             this.lblVanName.TabIndex = 8;
@@ -97,14 +78,14 @@
             // comboSelectEdit
             // 
             this.comboSelectEdit.FormattingEnabled = true;
-            this.comboSelectEdit.Location = new System.Drawing.Point(556, 187);
+            this.comboSelectEdit.Location = new System.Drawing.Point(615, 145);
             this.comboSelectEdit.Name = "comboSelectEdit";
             this.comboSelectEdit.Size = new System.Drawing.Size(121, 21);
             this.comboSelectEdit.TabIndex = 10;
             // 
             // btnSelectAssign
             // 
-            this.btnSelectAssign.Location = new System.Drawing.Point(581, 224);
+            this.btnSelectAssign.Location = new System.Drawing.Point(640, 182);
             this.btnSelectAssign.Name = "btnSelectAssign";
             this.btnSelectAssign.Size = new System.Drawing.Size(75, 23);
             this.btnSelectAssign.TabIndex = 11;
@@ -117,16 +98,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnPopulate);
-            this.Controls.Add(this.dgvOfficeStock);
-            this.Controls.Add(this.btnAssignStockPage);
-            this.Controls.Add(this.btnAddItem);
+            this.Controls.Add(this.dgvIndividual);
             this.Controls.Add(this.btnSelectAssign);
             this.Controls.Add(this.comboSelectEdit);
             this.Controls.Add(this.lblSelectAssign);
             this.Controls.Add(this.lblVanName);
             this.Name = "UC_IndividualVan";
             this.Size = new System.Drawing.Size(787, 577);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOfficeStock)).EndInit();
+            this.Load += new System.EventHandler(this.UC_IndividualVan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIndividual)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,9 +115,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnPopulate;
-        private System.Windows.Forms.DataGridView dgvOfficeStock;
-        private System.Windows.Forms.Button btnAssignStockPage;
-        private System.Windows.Forms.Button btnAddItem;
+        private System.Windows.Forms.DataGridView dgvIndividual;
         private System.Windows.Forms.Label lblSelectAssign;
         private System.Windows.Forms.Label lblVanName;
         private System.Windows.Forms.ComboBox comboSelectEdit;
