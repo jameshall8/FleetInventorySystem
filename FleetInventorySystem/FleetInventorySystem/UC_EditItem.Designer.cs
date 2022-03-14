@@ -182,6 +182,7 @@
             this.btnDeleteProduct.TabIndex = 29;
             this.btnDeleteProduct.Text = "Delete Product";
             this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
             // btnReorderProduct
             // 

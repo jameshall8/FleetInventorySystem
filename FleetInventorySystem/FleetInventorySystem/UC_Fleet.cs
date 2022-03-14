@@ -133,7 +133,7 @@ namespace FleetInventorySystem
         {
             Form1.CloseUserControls(Form1.Array);
             Form1.VanUC.Show();
-            Form1.VanUC.Partname1 = comboSelectVan.Text;
+            Form1.VanUC.registration = comboSelectVan.Text;
 
         }
 

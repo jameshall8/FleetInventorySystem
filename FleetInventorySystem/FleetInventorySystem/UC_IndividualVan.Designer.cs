@@ -32,7 +32,7 @@
             this.dgvIndividual = new System.Windows.Forms.DataGridView();
             this.lblSelectAssign = new System.Windows.Forms.Label();
             this.lblVanName = new System.Windows.Forms.Label();
-            this.comboSelectEdit = new System.Windows.Forms.ComboBox();
+            this.comboSelectMove = new System.Windows.Forms.ComboBox();
             this.btnSelectAssign = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIndividual)).BeginInit();
             this.SuspendLayout();
@@ -59,11 +59,11 @@
             // 
             this.lblSelectAssign.AutoSize = true;
             this.lblSelectAssign.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectAssign.Location = new System.Drawing.Point(582, 107);
+            this.lblSelectAssign.Location = new System.Drawing.Point(539, 117);
             this.lblSelectAssign.Name = "lblSelectAssign";
-            this.lblSelectAssign.Size = new System.Drawing.Size(220, 25);
+            this.lblSelectAssign.Size = new System.Drawing.Size(245, 25);
             this.lblSelectAssign.TabIndex = 9;
-            this.lblSelectAssign.Text = "Select Item To Assign";
+            this.lblSelectAssign.Text = "Move item back to office";
             // 
             // lblVanName
             // 
@@ -75,21 +75,21 @@
             this.lblVanName.TabIndex = 8;
             this.lblVanName.Text = "Office Stock";
             // 
-            // comboSelectEdit
+            // comboSelectMove
             // 
-            this.comboSelectEdit.FormattingEnabled = true;
-            this.comboSelectEdit.Location = new System.Drawing.Point(615, 145);
-            this.comboSelectEdit.Name = "comboSelectEdit";
-            this.comboSelectEdit.Size = new System.Drawing.Size(121, 21);
-            this.comboSelectEdit.TabIndex = 10;
+            this.comboSelectMove.FormattingEnabled = true;
+            this.comboSelectMove.Location = new System.Drawing.Point(594, 155);
+            this.comboSelectMove.Name = "comboSelectMove";
+            this.comboSelectMove.Size = new System.Drawing.Size(121, 21);
+            this.comboSelectMove.TabIndex = 10;
             // 
             // btnSelectAssign
             // 
-            this.btnSelectAssign.Location = new System.Drawing.Point(640, 182);
+            this.btnSelectAssign.Location = new System.Drawing.Point(616, 182);
             this.btnSelectAssign.Name = "btnSelectAssign";
             this.btnSelectAssign.Size = new System.Drawing.Size(75, 23);
             this.btnSelectAssign.TabIndex = 11;
-            this.btnSelectAssign.Text = "Assign";
+            this.btnSelectAssign.Text = "Move";
             this.btnSelectAssign.UseVisualStyleBackColor = true;
             this.btnSelectAssign.Click += new System.EventHandler(this.btnSelectAssign_Click);
             // 
@@ -100,7 +100,7 @@
             this.Controls.Add(this.btnPopulate);
             this.Controls.Add(this.dgvIndividual);
             this.Controls.Add(this.btnSelectAssign);
-            this.Controls.Add(this.comboSelectEdit);
+            this.Controls.Add(this.comboSelectMove);
             this.Controls.Add(this.lblSelectAssign);
             this.Controls.Add(this.lblVanName);
             this.Name = "UC_IndividualVan";
@@ -118,7 +118,7 @@
         private System.Windows.Forms.DataGridView dgvIndividual;
         private System.Windows.Forms.Label lblSelectAssign;
         private System.Windows.Forms.Label lblVanName;
-        private System.Windows.Forms.ComboBox comboSelectEdit;
+        private System.Windows.Forms.ComboBox comboSelectMove;
         private System.Windows.Forms.Button btnSelectAssign;
     }
 }
