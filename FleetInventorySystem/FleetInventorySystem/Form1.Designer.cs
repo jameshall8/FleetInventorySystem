@@ -45,19 +45,21 @@ namespace FleetInventorySystem
             this.usernameTxt = new System.Windows.Forms.TextBox();
             this.loginLbl = new System.Windows.Forms.Label();
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.lblUserDetails = new System.Windows.Forms.Label();
+            this.uC_AddItem1 = new FleetInventorySystem.UC_AddItem();
             this.uC_OfficeStock1 = new FleetInventorySystem.UC_OfficeStock();
             this.uC_Reorder1 = new FleetInventorySystem.UC_Reorder();
             this.uC_Fleet1 = new FleetInventorySystem.UC_Fleet();
             this.uC_NewUser1 = new FleetInventorySystem.UC_NewUser();
             this.uC_HomeDashboard1 = new FleetInventorySystem.UC_HomeDashboard();
             this.uC_AssignStock1 = new FleetInventorySystem.UC_AssignStock();
-            this.uC_AddItem1 = new FleetInventorySystem.UC_AddItem();
             this.navPanel.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // navPanel
             // 
+            this.navPanel.Controls.Add(this.lblUserDetails);
             this.navPanel.Controls.Add(this.btnHome);
             this.navPanel.Controls.Add(this.btnLogout);
             this.navPanel.Controls.Add(this.btnCreateAccount);
@@ -215,6 +217,23 @@ namespace FleetInventorySystem
             this.pnlLogin.Size = new System.Drawing.Size(727, 492);
             this.pnlLogin.TabIndex = 28;
             // 
+            // lblUserDetails
+            // 
+            this.lblUserDetails.AutoSize = true;
+            this.lblUserDetails.Location = new System.Drawing.Point(12, 440);
+            this.lblUserDetails.Name = "lblUserDetails";
+            this.lblUserDetails.Size = new System.Drawing.Size(35, 13);
+            this.lblUserDetails.TabIndex = 6;
+            this.lblUserDetails.Text = "label2";
+            // 
+            // uC_AddItem1
+            // 
+            this.uC_AddItem1.Location = new System.Drawing.Point(-4, 0);
+            this.uC_AddItem1.Name = "uC_AddItem1";
+            this.uC_AddItem1.Size = new System.Drawing.Size(647, 472);
+            this.uC_AddItem1.TabIndex = 36;
+            this.uC_AddItem1.Visible = false;
+            // 
             // uC_OfficeStock1
             // 
             this.uC_OfficeStock1.Location = new System.Drawing.Point(-4, 0);
@@ -264,14 +283,6 @@ namespace FleetInventorySystem
             this.uC_AssignStock1.TabIndex = 32;
             this.uC_AssignStock1.Visible = false;
             // 
-            // uC_AddItem1
-            // 
-            this.uC_AddItem1.Location = new System.Drawing.Point(-4, 0);
-            this.uC_AddItem1.Name = "uC_AddItem1";
-            this.uC_AddItem1.Size = new System.Drawing.Size(647, 472);
-            this.uC_AddItem1.TabIndex = 36;
-            this.uC_AddItem1.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,6 +328,7 @@ namespace FleetInventorySystem
         private UC_EditItem uC_EditItem1;
         private UC_AssignStock uC_AssignStock1;
         private UC_AddItem uC_AddItem1;
+        private Label lblUserDetails;
     }
 }
 

@@ -52,7 +52,7 @@
             this.dgvVans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVans.Location = new System.Drawing.Point(154, 121);
             this.dgvVans.Name = "dgvVans";
-            this.dgvVans.Size = new System.Drawing.Size(401, 363);
+            this.dgvVans.Size = new System.Drawing.Size(454, 363);
             this.dgvVans.TabIndex = 14;
             // 
             // btnSelectVan

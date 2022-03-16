@@ -15,6 +15,7 @@ namespace FleetInventorySystem
         private int currentStock;
         private int restockTime;
         private String supplierEmail;
+        private int percentage;
 
         public string Name { get => partname; set => partname = value; }
         public int Barcode { get => barcode; set => barcode = value; }
@@ -22,9 +23,7 @@ namespace FleetInventorySystem
         public int CurrentStock { get => currentStock; set => currentStock = value; }
         public int RestockTime { get => restockTime; set => restockTime = value; }
         public string SupplierEmail { get => supplierEmail; set => supplierEmail = value; }
-
-
-
+        public int Percentage { get => percentage; set => percentage = value; }
     }
 
 }

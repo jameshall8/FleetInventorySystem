@@ -30,7 +30,6 @@ namespace FleetInventorySystem
         {
             InitializeComponent();
 
-            refreshTable();
 
             
 
@@ -41,31 +40,47 @@ namespace FleetInventorySystem
 
         public void refreshTable()
         {
+
             try
             {
-                Form1.Conn.Open();
+                comboSelectMove.SelectedIndex = -1;
 
-
+                lblVanName.Text = registration;
                 SqlDataAdapter VansTable = new SqlDataAdapter("SELECT * FROM VanParts WHERE registration=@registration", Form1.Conn);
                 DataTable dbl = new DataTable();
 
                 VansTable.SelectCommand.Parameters.Add("@registration", SqlDbType.VarChar).Value = Registration;
-
                 VansTable.Fill(dbl);
 
-                dgvIndividual.DataSource = dbl;
-                dgvIndividual.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                Form1.Conn.Close();
-                fillEditCombo();
-                lblVanName.Text = "Van Registration - " + Registration;
-
-
+                if (dbl != null)
+                {
+                    if (dbl.Rows.Count > 0)
+                    {
+                        dgvIndividual.DataSource = dbl;
+                        dgvIndividual.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        comboSelectMove.Items.Clear();
+                        fillEditCombo();
+                        lblVanName.Text = "Van Registration - " + Registration;
+                    }
+                    else
+                    {
+                        MessageBox.Show("This van has no stock attached, please assign some from office stock");
+                        Form1.CloseUserControls(Form1.Array);
+                        Form1.FleetUC.Show();
+                    }
+                }
 
             }
             catch (Exception except)
             {
                 MessageBox.Show(except.Message);
+
             }
+            finally
+            {
+                Form1.Conn.Close();
+            }
+
         }
 
         public void getValuesToVariables()
@@ -89,9 +104,11 @@ namespace FleetInventorySystem
 
         private void addToOffice()
         {
+
             try
             {
                 Form1.Conn.Open();
+
                 sqlComm = new SqlCommand("INSERT INTO OfficeParts (name, maxStock, currentStock, restockTime, supplierEmail, barcodeNumber) VALUES (@partName, @maxStock, @currentStock, @restockTime, @supplierEmail, @barcodeNumber)", Form1.Conn);
 
                 sqlComm.Parameters.AddWithValue("@partName", partname);
@@ -103,38 +120,51 @@ namespace FleetInventorySystem
 
 
                 sqlComm.ExecuteNonQuery();
-                Form1.Conn.Close();
 
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
+
+            }
+            finally
+            {
+                Form1.Conn.Close();
+
             }
 
 
 
 
+
         }
-                
+
 
         private void deleteFromVan()
         {
-            try
+                try
             {
                 Form1.Conn.Open();
+
                 SqlCommand sql = new SqlCommand("DELETE FROM VanParts WHERE barcode=@barcode", Form1.Conn);
 
 
 
                 sql.Parameters.AddWithValue("@barcode", barcode);
                 sql.ExecuteNonQuery();
-                Form1.Conn.Close();
 
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
+
             }
+            finally
+            {
+                Form1.Conn.Close();
+
+            }
+
         }
 
         private void btnSelectAssign_Click(object sender, EventArgs e)
@@ -146,17 +176,18 @@ namespace FleetInventorySystem
                 addToOffice();
                 deleteFromVan();
                 refreshTable();
-
                 MessageBox.Show("Item successfully moved to the office");
 
             }
             catch (Exception p)
             {
-                MessageBox.Show(p.Message);
+                MessageBox.Show("You did not choose an item to move");
             }
 
 
         }
+
+        
 
 
 

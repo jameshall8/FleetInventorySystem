@@ -16,6 +16,7 @@ namespace FleetInventorySystem
     {
         private SqlCommand sqlComm;
         bool added;
+      
 
         public UC_AddItem()
         {
@@ -47,7 +48,7 @@ namespace FleetInventorySystem
                 if (part != null)
                 {
                     Form1.Conn.Open();
-                    sqlComm = new SqlCommand("INSERT INTO OfficeParts (name, maxStock, currentStock, restockTime, supplierEmail, barcodeNumber) VALUES (@partName, @maxStock, @currentStock, @restockTime, @supplierEmail, @barcodeNumber)", Form1.Conn);
+                    sqlComm = new SqlCommand("INSERT INTO OfficeParts (name, maxStock, currentStock, restockTime, supplierEmail, barcodeNumber, stockPercentage) VALUES (@partName, @maxStock, @currentStock, @restockTime, @supplierEmail, @barcodeNumber, @percentage )", Form1.Conn);
 
                     sqlComm.Parameters.AddWithValue("@partName", part.Name);
                     sqlComm.Parameters.AddWithValue("@maxStock", part.MaxStock);
@@ -55,6 +56,8 @@ namespace FleetInventorySystem
                     sqlComm.Parameters.AddWithValue("@restockTime", part.RestockTime);
                     sqlComm.Parameters.AddWithValue("@supplierEmail", part.SupplierEmail);
                     sqlComm.Parameters.AddWithValue("@barcodeNumber", part.Barcode);
+                    sqlComm.Parameters.AddWithValue("@percentage", part.Percentage);
+
 
 
                     sqlComm.ExecuteNonQuery();
@@ -97,6 +100,10 @@ namespace FleetInventorySystem
                 part.RestockTime = Convert.ToInt32(txtReorder.Text);
                 part.SupplierEmail = txtEmail.Text;
                 part.Barcode = Convert.ToInt32(txtBarcode.Text);
+                
+                double perc = (part.CurrentStock / part.MaxStock) * 100;
+                part.Percentage = Convert.ToInt32(perc);
+
 
                 return part;
             }
@@ -111,12 +118,15 @@ namespace FleetInventorySystem
 
         private void EmptyTextBoxes()
         {
-            txtName.Text = "";
-            txtMax.Text = "";
-            txtCurrent.Text = "";
-            txtReorder.Text = "";
-            txtEmail.Text = "";
-            txtBarcode.Text = "";
+            foreach (Control c in this.Controls)
+            {
+                if (c is TextBox)
+                {
+                    TextBox textbox = c as TextBox;
+                    textbox.Text = "";
+
+                }
+            }
         }
 
         private bool CheckIfNull()

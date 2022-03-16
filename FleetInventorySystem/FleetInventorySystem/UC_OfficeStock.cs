@@ -76,7 +76,7 @@ namespace FleetInventorySystem
         private void btnAddItem_Click(object sender, EventArgs e)
         {
 
-            if (Form1.Role == "Manager")
+            if (Form1.Role == "Admin")
             {
 
                 Form1.CloseUserControls(Form1.Array);
@@ -96,6 +96,7 @@ namespace FleetInventorySystem
 
                 Form1.CloseUserControls(Form1.Array);
                 Form1.showPage(Form1.AssignStockUC);
+                Form1.AssignStockUC.refreshStock();
             }
             else
             {
@@ -132,6 +133,8 @@ namespace FleetInventorySystem
                 dgvOfficeStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 Form1.Conn.Close();
+                comboSelectEdit.Items.Clear();
+                fillEditCombo();
 
 
 

@@ -27,10 +27,11 @@ namespace FleetInventorySystem
 
         private void btnPopulateVans_Click(object sender, EventArgs e)
         {
+            Form1.Conn.Open();
+
             try
             {
 
-                Form1.Conn.Open();
 
 
                 SqlDataAdapter VansTable = new SqlDataAdapter("SELECT * FROM VansTable", Form1.Conn);
@@ -40,12 +41,12 @@ namespace FleetInventorySystem
 
                 dgvVans.DataSource = dbl;
                 dgvVans.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                Form1.Conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            Form1.Conn.Close();
 
 
 
@@ -86,7 +87,6 @@ namespace FleetInventorySystem
 
                 dgvVans.DataSource = dbl;
                 dgvVans.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                Form1.Conn.Close();
                 comboSelectVan.SelectedIndex = -1;
                 
 
@@ -96,6 +96,8 @@ namespace FleetInventorySystem
             {
                 MessageBox.Show(except.Message);
             }
+            Form1.Conn.Close();
+
         }
 
         private void comboSelectVan_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,6 +107,7 @@ namespace FleetInventorySystem
 
         private void btnSelectVan_Click(object sender, EventArgs e)
         {
+            
             if (Form1.Role != "Manager")
             {
                 MessageBox.Show("You do not have access to this page");

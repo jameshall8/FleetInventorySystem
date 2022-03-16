@@ -40,27 +40,30 @@
             // lblBelow5
             // 
             this.lblBelow5.AutoSize = true;
+            this.lblBelow5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBelow5.Location = new System.Drawing.Point(569, 266);
             this.lblBelow5.Name = "lblBelow5";
-            this.lblBelow5.Size = new System.Drawing.Size(35, 13);
+            this.lblBelow5.Size = new System.Drawing.Size(76, 25);
             this.lblBelow5.TabIndex = 13;
             this.lblBelow5.Text = "label6";
             // 
             // lblBelow20
             // 
             this.lblBelow20.AutoSize = true;
+            this.lblBelow20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBelow20.Location = new System.Drawing.Point(376, 266);
             this.lblBelow20.Name = "lblBelow20";
-            this.lblBelow20.Size = new System.Drawing.Size(35, 13);
+            this.lblBelow20.Size = new System.Drawing.Size(76, 25);
             this.lblBelow20.TabIndex = 12;
             this.lblBelow20.Text = "label5";
             // 
             // lblBelow50
             // 
             this.lblBelow50.AutoSize = true;
+            this.lblBelow50.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBelow50.Location = new System.Drawing.Point(182, 266);
             this.lblBelow50.Name = "lblBelow50";
-            this.lblBelow50.Size = new System.Drawing.Size(35, 13);
+            this.lblBelow50.Size = new System.Drawing.Size(76, 25);
             this.lblBelow50.TabIndex = 11;
             this.lblBelow50.Text = "label4";
             // 
@@ -91,6 +94,7 @@
             this.lbl50.Size = new System.Drawing.Size(86, 13);
             this.lbl50.TabIndex = 8;
             this.lbl50.Text = "Items below 50%";
+            this.lbl50.Click += new System.EventHandler(this.lbl50_Click);
             // 
             // managementLbl
             // 
@@ -98,9 +102,10 @@
             this.managementLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managementLbl.Location = new System.Drawing.Point(335, 77);
             this.managementLbl.Name = "managementLbl";
-            this.managementLbl.Size = new System.Drawing.Size(117, 25);
+            this.managementLbl.Size = new System.Drawing.Size(179, 25);
             this.managementLbl.TabIndex = 7;
-            this.managementLbl.Text = "Dashboard";
+            this.managementLbl.Text = "Office Dashboard";
+            this.managementLbl.Click += new System.EventHandler(this.managementLbl_Click);
             // 
             // UC_HomeDashboard
             // 

@@ -23,7 +23,7 @@ namespace FleetInventorySystem
         static UC_Reorder reorderUC;
         static UserControl[] array;
         static UC_IndividualVan vanUC;
-
+        String fname;
         static SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-H5ACLIO\SQLEXPRESS;Initial Catalog=FleetInventory;Integrated Security=True");
 
         static String role;
@@ -41,13 +41,12 @@ namespace FleetInventorySystem
         public static SqlConnection Conn { get => conn; set => conn = value; }
         public static UC_IndividualVan VanUC { get => vanUC; set => vanUC = value; }
 
+
         public Form1()
         {
             InitializeComponent();
-
+            passwordTxt.PasswordChar = '*';
             
-
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -100,9 +99,16 @@ namespace FleetInventorySystem
 
                 if (dtable.Rows.Count > 0)
                 {
+
+                    foreach (DataRow row in dtable.Rows)
+                    {
+                        role = (string)row["role"];
+                        fname = (string)row["first_name"];
+                    }
+
                     username = usernameTxt.Text;
                     user_password = passwordTxt.Text;
-
+                    lblUserDetails.Text = fname + " (" + role + ")";
                     pnlLogin.Hide();
                     navPanel.Show();
                     Home.Show();
@@ -115,9 +121,9 @@ namespace FleetInventorySystem
 
 
             }
-            catch
+            catch (Exception exc)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Account issue, please contact admin");
             }
 
 

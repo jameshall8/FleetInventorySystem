@@ -45,6 +45,7 @@
             this.btnAssignStock.TabIndex = 7;
             this.btnAssignStock.Text = "Assign";
             this.btnAssignStock.UseVisualStyleBackColor = true;
+            this.btnAssignStock.Click += new System.EventHandler(this.btnAssignStock_Click);
             // 
             // label3
             // 

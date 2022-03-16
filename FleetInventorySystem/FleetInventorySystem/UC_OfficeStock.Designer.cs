@@ -103,7 +103,7 @@
             this.dgvOfficeStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOfficeStock.Location = new System.Drawing.Point(146, 117);
             this.dgvOfficeStock.Name = "dgvOfficeStock";
-            this.dgvOfficeStock.Size = new System.Drawing.Size(401, 363);
+            this.dgvOfficeStock.Size = new System.Drawing.Size(451, 363);
             this.dgvOfficeStock.TabIndex = 6;
             // 
             // btnPopulate

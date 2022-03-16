@@ -28,65 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblFirstname = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblLname = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.lblEmailAddress = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtLname = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtPassConfirm = new System.Windows.Forms.TextBox();
             this.lblNewUserTitle = new System.Windows.Forms.Label();
             this.btnCreateNewUser = new System.Windows.Forms.Button();
+            this.txtFname = new System.Windows.Forms.TextBox();
+            this.lblFname = new System.Windows.Forms.Label();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.lblFirstname = new System.Windows.Forms.Label();
             this.lblNewUserInfo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboRole = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // lblFirstname
+            // lblLname
             // 
-            this.lblFirstname.AutoSize = true;
-            this.lblFirstname.Location = new System.Drawing.Point(265, 135);
-            this.lblFirstname.Name = "lblFirstname";
-            this.lblFirstname.Size = new System.Drawing.Size(57, 13);
-            this.lblFirstname.TabIndex = 0;
-            this.lblFirstname.Text = "First Name";
+            this.lblLname.AutoSize = true;
+            this.lblLname.Location = new System.Drawing.Point(265, 135);
+            this.lblLname.Name = "lblLname";
+            this.lblLname.Size = new System.Drawing.Size(58, 13);
+            this.lblLname.TabIndex = 0;
+            this.lblLname.Text = "Last Name";
             // 
-            // lblLastName
+            // lblPassword
             // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(265, 185);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(58, 13);
-            this.lblLastName.TabIndex = 1;
-            this.lblLastName.Text = "Last Name";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(242, 226);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(91, 13);
+            this.lblPassword.TabIndex = 1;
+            this.lblPassword.Text = "Confirm Password";
             // 
             // lblEmailAddress
             // 
             this.lblEmailAddress.AutoSize = true;
-            this.lblEmailAddress.Location = new System.Drawing.Point(265, 242);
+            this.lblEmailAddress.Location = new System.Drawing.Point(267, 265);
             this.lblEmailAddress.Name = "lblEmailAddress";
             this.lblEmailAddress.Size = new System.Drawing.Size(73, 13);
             this.lblEmailAddress.TabIndex = 2;
             this.lblEmailAddress.Text = "Email Address";
             // 
-            // txtFirstName
+            // txtLname
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(346, 135);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(100, 20);
-            this.txtFirstName.TabIndex = 3;
-            this.txtFirstName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtLname.Location = new System.Drawing.Point(346, 135);
+            this.txtLname.Name = "txtLname";
+            this.txtLname.Size = new System.Drawing.Size(148, 20);
+            this.txtLname.TabIndex = 3;
+            this.txtLname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(346, 239);
+            this.txtEmail.Location = new System.Drawing.Point(346, 262);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(148, 20);
             this.txtEmail.TabIndex = 4;
             // 
-            // txtLastName
+            // txtPassConfirm
             // 
-            this.txtLastName.Location = new System.Drawing.Point(346, 182);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(100, 20);
-            this.txtLastName.TabIndex = 5;
+            this.txtPassConfirm.Location = new System.Drawing.Point(346, 223);
+            this.txtPassConfirm.Name = "txtPassConfirm";
+            this.txtPassConfirm.Size = new System.Drawing.Size(148, 20);
+            this.txtPassConfirm.TabIndex = 5;
             // 
             // lblNewUserTitle
             // 
@@ -100,37 +106,93 @@
             // 
             // btnCreateNewUser
             // 
-            this.btnCreateNewUser.Location = new System.Drawing.Point(326, 306);
+            this.btnCreateNewUser.Location = new System.Drawing.Point(322, 347);
             this.btnCreateNewUser.Name = "btnCreateNewUser";
             this.btnCreateNewUser.Size = new System.Drawing.Size(75, 23);
             this.btnCreateNewUser.TabIndex = 7;
             this.btnCreateNewUser.Text = "Create User";
             this.btnCreateNewUser.UseVisualStyleBackColor = true;
+            this.btnCreateNewUser.Click += new System.EventHandler(this.btnCreateNewUser_Click);
+            // 
+            // txtFname
+            // 
+            this.txtFname.Location = new System.Drawing.Point(346, 94);
+            this.txtFname.Name = "txtFname";
+            this.txtFname.Size = new System.Drawing.Size(148, 20);
+            this.txtFname.TabIndex = 10;
+            // 
+            // lblFname
+            // 
+            this.lblFname.AutoSize = true;
+            this.lblFname.Location = new System.Drawing.Point(265, 94);
+            this.lblFname.Name = "lblFname";
+            this.lblFname.Size = new System.Drawing.Size(57, 13);
+            this.lblFname.TabIndex = 9;
+            this.lblFname.Text = "First Name";
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(346, 182);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(148, 20);
+            this.txtPass.TabIndex = 12;
+            // 
+            // lblFirstname
+            // 
+            this.lblFirstname.AutoSize = true;
+            this.lblFirstname.Location = new System.Drawing.Point(265, 182);
+            this.lblFirstname.Name = "lblFirstname";
+            this.lblFirstname.Size = new System.Drawing.Size(53, 13);
+            this.lblFirstname.TabIndex = 11;
+            this.lblFirstname.Text = "Password";
             // 
             // lblNewUserInfo
             // 
             this.lblNewUserInfo.AutoSize = true;
-            this.lblNewUserInfo.Location = new System.Drawing.Point(242, 373);
+            this.lblNewUserInfo.Location = new System.Drawing.Point(242, 390);
             this.lblNewUserInfo.Name = "lblNewUserInfo";
             this.lblNewUserInfo.Size = new System.Drawing.Size(227, 13);
             this.lblNewUserInfo.TabIndex = 8;
             this.lblNewUserInfo.Text = "The new user will be emailed their log in details";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(267, 303);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Role";
+            // 
+            // comboRole
+            // 
+            this.comboRole.FormattingEnabled = true;
+            this.comboRole.Location = new System.Drawing.Point(346, 300);
+            this.comboRole.Name = "comboRole";
+            this.comboRole.Size = new System.Drawing.Size(148, 21);
+            this.comboRole.TabIndex = 14;
+            // 
             // UC_NewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.comboRole);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.lblFirstname);
+            this.Controls.Add(this.txtFname);
+            this.Controls.Add(this.lblFname);
             this.Controls.Add(this.lblNewUserInfo);
             this.Controls.Add(this.btnCreateNewUser);
             this.Controls.Add(this.lblNewUserTitle);
-            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtPassConfirm);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.txtLname);
             this.Controls.Add(this.lblEmailAddress);
-            this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.lblFirstname);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblLname);
             this.Name = "UC_NewUser";
-            this.Size = new System.Drawing.Size(580, 488);
+            this.Size = new System.Drawing.Size(569, 488);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,14 +200,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblFirstname;
-        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblLname;
+        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblEmailAddress;
-        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtLname;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtPassConfirm;
         private System.Windows.Forms.Label lblNewUserTitle;
         private System.Windows.Forms.Button btnCreateNewUser;
+        private System.Windows.Forms.TextBox txtFname;
+        private System.Windows.Forms.Label lblFname;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.Label lblFirstname;
         private System.Windows.Forms.Label lblNewUserInfo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboRole;
     }
 }
