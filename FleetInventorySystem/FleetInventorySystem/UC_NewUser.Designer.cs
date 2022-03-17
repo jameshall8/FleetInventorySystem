@@ -106,12 +106,13 @@
             // 
             // btnCreateNewUser
             // 
-            this.btnCreateNewUser.Location = new System.Drawing.Point(322, 347);
+            this.btnCreateNewUser.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCreateNewUser.Location = new System.Drawing.Point(326, 347);
             this.btnCreateNewUser.Name = "btnCreateNewUser";
             this.btnCreateNewUser.Size = new System.Drawing.Size(75, 23);
             this.btnCreateNewUser.TabIndex = 7;
             this.btnCreateNewUser.Text = "Create User";
-            this.btnCreateNewUser.UseVisualStyleBackColor = true;
+            this.btnCreateNewUser.UseVisualStyleBackColor = false;
             this.btnCreateNewUser.Click += new System.EventHandler(this.btnCreateNewUser_Click);
             // 
             // txtFname
@@ -176,6 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Controls.Add(this.comboRole);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPass);

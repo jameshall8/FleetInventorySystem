@@ -15,11 +15,12 @@ namespace FleetInventorySystem
     {
         String supplierEmail, partname;
         int maxStock, currentStock, restockTime, barcodeNumber, newBarcodeNumber;
-        bool updated = false;
+        decimal percentage;
 
 
         List<String> arrayRows = new List<String>();
         private SqlCommand sqlComm;
+        private SqlCommand sqlComm2;
 
         public string Partname { get => partname; set => partname = value; }
         public int BarcodeNumber { get => barcodeNumber; set => barcodeNumber = value; }
@@ -45,10 +46,13 @@ namespace FleetInventorySystem
                 if (updatePart())
                 {
                    MessageBox.Show("Item Updated Successfully");
+                    Form1.CloseUserControls(Form1.Array);
+                    Form1.OfficeStockUC.Show();
+                    Form1.OfficeStockUC.refreshTable();
                 }
 
             }
-            catch (Exception l)
+            catch
             {
                 MessageBox.Show("Refill values and try again");
 
@@ -93,6 +97,18 @@ namespace FleetInventorySystem
 
         }
 
+        private void btnReorderProduct_Click(object sender, EventArgs e)
+        {
+            Form1.CloseUserControls(Form1.Array);
+            Form1.ReorderUC.Show();
+            Form1.ReorderUC.Barcode = barcodeNumber;
+            Form1.ReorderUC.Partname = partname;
+            Form1.ReorderUC.CurrentStock = currentStock;
+            Form1.ReorderUC.MaxStock = maxStock;
+
+            Form1.ReorderUC.refreshForm();
+        }
+
         private bool deleteProduct()
         {
             try
@@ -122,7 +138,7 @@ namespace FleetInventorySystem
                 if (GetNewValues())
                 {
                     Form1.Conn.Open();
-                    sqlComm = new SqlCommand("UPDATE OfficeParts SET barcodeNumber=@newBarcodeNumber, name=@partName, maxStock=@maxStock, currentStock=@currentStock, restockTime=@restockTime, supplierEmail=@supplierEmail WHERE barcodeNumber=@barcodeNumber", Form1.Conn);
+                    sqlComm = new SqlCommand("UPDATE OfficeParts SET barcodeNumber=@newBarcodeNumber, name=@partName, maxStock=@maxStock, restockTime=@restockTime, supplierEmail=@supplierEmail, stockPercentage=@percentage WHERE barcodeNumber=@barcodeNumber", Form1.Conn);
 
                     sqlComm.Parameters.AddWithValue("@partName", partname);
                     sqlComm.Parameters.AddWithValue("@maxStock", maxStock);
@@ -131,11 +147,14 @@ namespace FleetInventorySystem
                     sqlComm.Parameters.AddWithValue("@supplierEmail", supplierEmail);
                     sqlComm.Parameters.AddWithValue("@newBarcodeNumber", newBarcodeNumber);
                     sqlComm.Parameters.AddWithValue("@barcodeNumber", barcodeNumber);
+                    sqlComm.Parameters.AddWithValue("@percentage", percentage);
+
 
 
                     sqlComm.ExecuteNonQuery();
 
                     Form1.Conn.Close();
+                    updatePercentageAndCurrent(currentStock, maxStock, newBarcodeNumber);
                     return true;
                 }
 
@@ -148,8 +167,8 @@ namespace FleetInventorySystem
                 }
             }
 
-            catch (Exception e)
-            {
+            catch 
+            { 
                 MessageBox.Show("Please check your inputs are the correct value type");
                 return false;
             }
@@ -168,6 +187,8 @@ namespace FleetInventorySystem
                 restockTime = Convert.ToInt32(txtReorder.Text);
                 supplierEmail = txtEmail.Text;
                 newBarcodeNumber = Convert.ToInt32(txtBarcode.Text);
+                
+                
                 return true;
             }
             catch (Exception e)
@@ -176,7 +197,75 @@ namespace FleetInventorySystem
                 return false;
             }
         }
+        public void updatePercentageAndCurrent(int current, int max, int barcode)
+        {
+            Form1.Conn.Open();
 
+            try
+            {
+
+                decimal perc = (decimal)current / max * 100;
+                decimal percentage = perc;
+
+                sqlComm2 = new SqlCommand("UPDATE OfficeParts SET stockPercentage=@percentage, currentStock=@currentStock WHERE barcodeNumber=@barcodeNumber", Form1.Conn);
+                sqlComm2.Parameters.AddWithValue("@percentage", percentage);
+                sqlComm2.Parameters.AddWithValue("@barcodeNumber", barcode);
+                sqlComm2.Parameters.AddWithValue("@currentStock", current);
+
+
+
+                sqlComm2.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                Form1.Conn.Close();
+
+            }
+
+        }
+
+        public int getCurrentStock(int barcodeNumber)
+        {
+            String stmt = "SELECT currentStock FROM OfficeParts WHERE barcodeNumber = '" + barcodeNumber + "'";
+            SqlDataAdapter sqlDa = new SqlDataAdapter(stmt, Form1.Conn);
+            DataTable dtbl = new DataTable();
+            sqlDa.Fill(dtbl);
+
+            foreach (DataRow row in dtbl.Rows)
+            {
+                return (int)row["currentStock"];
+            }
+
+            return 0;
+        }
+
+        public void updateQuantity(int newQuantity, int barcode)
+        {
+            Form1.Conn.Open();
+
+            try
+            {
+                sqlComm2 = new SqlCommand("UPDATE OfficeParts SET currentStock=@newStockLevel,  WHERE barcodeNumber=@barcodeNumber", Form1.Conn);
+                sqlComm2.Parameters.AddWithValue("@currentStock", currentStock);
+                sqlComm2.Parameters.AddWithValue("@barcodeNumber", barcode);
+
+
+                sqlComm2.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                Form1.Conn.Close();
+
+            }
+        }
 
 
 

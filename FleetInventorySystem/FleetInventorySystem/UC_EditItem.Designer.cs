@@ -192,6 +192,7 @@
             this.btnReorderProduct.TabIndex = 30;
             this.btnReorderProduct.Text = "Reorder Product";
             this.btnReorderProduct.UseVisualStyleBackColor = true;
+            this.btnReorderProduct.Click += new System.EventHandler(this.btnReorderProduct_Click);
             // 
             // UC_EditItem
             // 

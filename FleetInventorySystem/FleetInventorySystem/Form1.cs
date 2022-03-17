@@ -13,18 +13,18 @@ namespace FleetInventorySystem
 {
     public partial class Form1 : Form
     {
-        static UC_HomeDashboard home;
-        static UC_NewUser newUserUC;
-        static UC_EditItem editItemUC;
-        static UC_AddItem addItemUC;
-        static UC_AssignStock assignStockUC;
-        static UC_Fleet fleetUC;
-        static UC_OfficeStock officeStockUC;
-        static UC_Reorder reorderUC;
-        static UserControl[] array;
-        static UC_IndividualVan vanUC;
-        String fname;
-        static SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-H5ACLIO\SQLEXPRESS;Initial Catalog=FleetInventory;Integrated Security=True");
+        private static UC_HomeDashboard home;
+        private static UC_NewUser newUserUC;
+        private static UC_EditItem editItemUC;
+        private static UC_AddItem addItemUC;
+        private static UC_AssignStock assignStockUC;
+        private static UC_Fleet fleetUC;
+        private static UC_OfficeStock officeStockUC;
+        private static UC_Reorder reorderUC;
+        private static UserControl[] array;
+        private static UC_IndividualVan vanUC;
+        private static String fname;
+        private static SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-H5ACLIO\SQLEXPRESS;Initial Catalog=FleetInventory;Integrated Security=True");
 
         static String role;
 
@@ -40,16 +40,58 @@ namespace FleetInventorySystem
         public static string Role { get => role; set => role = value; }
         public static SqlConnection Conn { get => conn; set => conn = value; }
         public static UC_IndividualVan VanUC { get => vanUC; set => vanUC = value; }
-
+        public static string Fname { get => fname; set => fname = value; }
 
         public Form1()
         {
             InitializeComponent();
             passwordTxt.PasswordChar = '*';
-            
+            setColours();
+           
+
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void setColours()
+        {
+            Button[] buttons = new Button[] {btnHome, btnOfficeStock, btnFleet, btnCreateAccount, btnLogout, loginBtn };
+
+            foreach (Button button in buttons)
+            {
+                button.BackColor = ColorTranslator.FromHtml("#818589");
+                button.Font = new Font("Microsoft YaHei", 9, FontStyle.Bold);
+                button.FlatStyle = FlatStyle.Flat;
+                button.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#818589");
+                button.FlatAppearance.BorderSize = 1;
+               
+
+            }
+
+            BackColor = ColorTranslator.FromHtml("#B7BEA1");
+            navPanel.BackColor = ColorTranslator.FromHtml("#A9A9A9");
+        
+
+
+        }
+
+            private void setButtonColors()
+            {
+                foreach (UserControl UC in array)
+            {
+                foreach (var button in UC.Controls.OfType<Button>())
+                {
+                    button.BackColor = ColorTranslator.FromHtml("#818589");
+                    button.Font = new Font("Microsoft YaHei", 9, FontStyle.Bold);
+                    button.FlatStyle = FlatStyle.Flat;
+                    button.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#818589");
+                    button.FlatAppearance.BorderSize = 1;
+
+                }
+            }
+
+                
+           
+            }
+            private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -103,13 +145,14 @@ namespace FleetInventorySystem
                     foreach (DataRow row in dtable.Rows)
                     {
                         role = (string)row["role"];
-                        fname = (string)row["first_name"];
+                        Fname = (string)row["first_name"];
                     }
 
                     username = usernameTxt.Text;
                     user_password = passwordTxt.Text;
-                    lblUserDetails.Text = fname + " (" + role + ")";
+                    lblUserDetails.Text = Fname + " (" + role + ")";
                     pnlLogin.Hide();
+                    setButtonColors();
                     navPanel.Show();
                     Home.Show();
 
@@ -121,7 +164,7 @@ namespace FleetInventorySystem
 
 
             }
-            catch (Exception exc)
+            catch
             {
                 MessageBox.Show("Account issue, please contact admin");
             }
@@ -149,8 +192,15 @@ namespace FleetInventorySystem
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            CloseUserControls(Array);
-            NewUserUC.Show();
+            if (role == "Admin")
+            {
+                CloseUserControls(Array);
+                NewUserUC.Show();
+            }
+            else
+            {
+                MessageBox.Show("You do not have permission to do this");
+            }
 
         }
 
@@ -176,6 +226,7 @@ namespace FleetInventorySystem
         {
             CloseUserControls(Array);
             Home.Show();
+            Home.RefreshValues();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -235,6 +286,10 @@ namespace FleetInventorySystem
 
         }
 
-
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            CloseUserControls(Array);
+            home.Show();
+        }
     }
 }

@@ -31,6 +31,8 @@ namespace FleetInventorySystem
         private void InitializeComponent()
         {
             this.navPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblUserDetails = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnCreateAccount = new System.Windows.Forms.Button();
@@ -45,20 +47,21 @@ namespace FleetInventorySystem
             this.usernameTxt = new System.Windows.Forms.TextBox();
             this.loginLbl = new System.Windows.Forms.Label();
             this.pnlLogin = new System.Windows.Forms.Panel();
-            this.lblUserDetails = new System.Windows.Forms.Label();
             this.uC_AddItem1 = new FleetInventorySystem.UC_AddItem();
-            this.uC_OfficeStock1 = new FleetInventorySystem.UC_OfficeStock();
             this.uC_Reorder1 = new FleetInventorySystem.UC_Reorder();
             this.uC_Fleet1 = new FleetInventorySystem.UC_Fleet();
             this.uC_NewUser1 = new FleetInventorySystem.UC_NewUser();
             this.uC_HomeDashboard1 = new FleetInventorySystem.UC_HomeDashboard();
             this.uC_AssignStock1 = new FleetInventorySystem.UC_AssignStock();
+            this.uC_OfficeStock1 = new FleetInventorySystem.UC_OfficeStock();
             this.navPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // navPanel
             // 
+            this.navPanel.Controls.Add(this.pictureBox1);
             this.navPanel.Controls.Add(this.lblUserDetails);
             this.navPanel.Controls.Add(this.btnHome);
             this.navPanel.Controls.Add(this.btnLogout);
@@ -73,11 +76,31 @@ namespace FleetInventorySystem
             this.navPanel.Visible = false;
             this.navPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FleetInventorySystem.Properties.Resources.home;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 53);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // lblUserDetails
+            // 
+            this.lblUserDetails.AutoSize = true;
+            this.lblUserDetails.Location = new System.Drawing.Point(11, 430);
+            this.lblUserDetails.Name = "lblUserDetails";
+            this.lblUserDetails.Size = new System.Drawing.Size(35, 13);
+            this.lblUserDetails.TabIndex = 6;
+            this.lblUserDetails.Text = "label2";
+            // 
             // btnHome
             // 
             this.btnHome.Location = new System.Drawing.Point(0, 72);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(102, 23);
+            this.btnHome.Size = new System.Drawing.Size(102, 34);
             this.btnHome.TabIndex = 5;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
@@ -85,9 +108,9 @@ namespace FleetInventorySystem
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(0, 456);
+            this.btnLogout.Location = new System.Drawing.Point(0, 446);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(102, 23);
+            this.btnLogout.Size = new System.Drawing.Size(102, 33);
             this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -95,9 +118,9 @@ namespace FleetInventorySystem
             // 
             // btnCreateAccount
             // 
-            this.btnCreateAccount.Location = new System.Drawing.Point(0, 354);
+            this.btnCreateAccount.Location = new System.Drawing.Point(0, 345);
             this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(102, 23);
+            this.btnCreateAccount.Size = new System.Drawing.Size(102, 55);
             this.btnCreateAccount.TabIndex = 3;
             this.btnCreateAccount.Text = "Create Account";
             this.btnCreateAccount.UseVisualStyleBackColor = true;
@@ -105,9 +128,9 @@ namespace FleetInventorySystem
             // 
             // btnFleet
             // 
-            this.btnFleet.Location = new System.Drawing.Point(0, 235);
+            this.btnFleet.Location = new System.Drawing.Point(0, 251);
             this.btnFleet.Name = "btnFleet";
-            this.btnFleet.Size = new System.Drawing.Size(102, 23);
+            this.btnFleet.Size = new System.Drawing.Size(102, 36);
             this.btnFleet.TabIndex = 2;
             this.btnFleet.Text = "Fleet";
             this.btnFleet.UseVisualStyleBackColor = true;
@@ -115,9 +138,9 @@ namespace FleetInventorySystem
             // 
             // btnOfficeStock
             // 
-            this.btnOfficeStock.Location = new System.Drawing.Point(0, 143);
+            this.btnOfficeStock.Location = new System.Drawing.Point(0, 154);
             this.btnOfficeStock.Name = "btnOfficeStock";
-            this.btnOfficeStock.Size = new System.Drawing.Size(102, 23);
+            this.btnOfficeStock.Size = new System.Drawing.Size(102, 37);
             this.btnOfficeStock.TabIndex = 1;
             this.btnOfficeStock.Text = "Office Stock";
             this.btnOfficeStock.UseVisualStyleBackColor = true;
@@ -147,7 +170,7 @@ namespace FleetInventorySystem
             // 
             this.loginBtn.Location = new System.Drawing.Point(265, 319);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(75, 23);
+            this.loginBtn.Size = new System.Drawing.Size(75, 30);
             this.loginBtn.TabIndex = 25;
             this.loginBtn.Text = "Log In";
             this.loginBtn.UseVisualStyleBackColor = true;
@@ -198,7 +221,7 @@ namespace FleetInventorySystem
             // 
             // pnlLogin
             // 
-            this.pnlLogin.Controls.Add(this.uC_AddItem1);
+            this.pnlLogin.BackColor = System.Drawing.Color.Transparent;
             this.pnlLogin.Controls.Add(this.loginLbl);
             this.pnlLogin.Controls.Add(this.passwordTxt);
             this.pnlLogin.Controls.Add(this.label1);
@@ -206,53 +229,41 @@ namespace FleetInventorySystem
             this.pnlLogin.Controls.Add(this.loginBtn);
             this.pnlLogin.Controls.Add(this.passwordLbl);
             this.pnlLogin.Controls.Add(this.usernameLbl);
-            this.pnlLogin.Controls.Add(this.uC_OfficeStock1);
+            this.pnlLogin.Controls.Add(this.uC_AddItem1);
             this.pnlLogin.Controls.Add(this.uC_Reorder1);
             this.pnlLogin.Controls.Add(this.uC_Fleet1);
             this.pnlLogin.Controls.Add(this.uC_NewUser1);
             this.pnlLogin.Controls.Add(this.uC_HomeDashboard1);
             this.pnlLogin.Controls.Add(this.uC_AssignStock1);
+            this.pnlLogin.Controls.Add(this.uC_OfficeStock1);
             this.pnlLogin.Location = new System.Drawing.Point(108, 0);
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(727, 492);
             this.pnlLogin.TabIndex = 28;
             // 
-            // lblUserDetails
-            // 
-            this.lblUserDetails.AutoSize = true;
-            this.lblUserDetails.Location = new System.Drawing.Point(12, 440);
-            this.lblUserDetails.Name = "lblUserDetails";
-            this.lblUserDetails.Size = new System.Drawing.Size(35, 13);
-            this.lblUserDetails.TabIndex = 6;
-            this.lblUserDetails.Text = "label2";
-            // 
             // uC_AddItem1
             // 
-            this.uC_AddItem1.Location = new System.Drawing.Point(-4, 0);
+            this.uC_AddItem1.Location = new System.Drawing.Point(143, 8);
             this.uC_AddItem1.Name = "uC_AddItem1";
             this.uC_AddItem1.Size = new System.Drawing.Size(647, 472);
             this.uC_AddItem1.TabIndex = 36;
             this.uC_AddItem1.Visible = false;
             // 
-            // uC_OfficeStock1
-            // 
-            this.uC_OfficeStock1.Location = new System.Drawing.Point(-4, 0);
-            this.uC_OfficeStock1.Name = "uC_OfficeStock1";
-            this.uC_OfficeStock1.Size = new System.Drawing.Size(727, 496);
-            this.uC_OfficeStock1.TabIndex = 30;
-            this.uC_OfficeStock1.Visible = false;
-            // 
             // uC_Reorder1
             // 
-            this.uC_Reorder1.Location = new System.Drawing.Point(0, 0);
+            this.uC_Reorder1.Barcode = 0;
+            this.uC_Reorder1.CurrentStock = 0;
+            this.uC_Reorder1.Location = new System.Drawing.Point(143, 12);
+            this.uC_Reorder1.MaxStock = 0;
             this.uC_Reorder1.Name = "uC_Reorder1";
+            this.uC_Reorder1.Partname = null;
             this.uC_Reorder1.Size = new System.Drawing.Size(615, 500);
             this.uC_Reorder1.TabIndex = 35;
             this.uC_Reorder1.Visible = false;
             // 
             // uC_Fleet1
             // 
-            this.uC_Fleet1.Location = new System.Drawing.Point(-3, 3);
+            this.uC_Fleet1.Location = new System.Drawing.Point(143, 8);
             this.uC_Fleet1.Name = "uC_Fleet1";
             this.uC_Fleet1.Size = new System.Drawing.Size(706, 493);
             this.uC_Fleet1.TabIndex = 34;
@@ -260,7 +271,8 @@ namespace FleetInventorySystem
             // 
             // uC_NewUser1
             // 
-            this.uC_NewUser1.Location = new System.Drawing.Point(-4, 8);
+            this.uC_NewUser1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.uC_NewUser1.Location = new System.Drawing.Point(188, 12);
             this.uC_NewUser1.Name = "uC_NewUser1";
             this.uC_NewUser1.Size = new System.Drawing.Size(727, 492);
             this.uC_NewUser1.TabIndex = 29;
@@ -268,7 +280,7 @@ namespace FleetInventorySystem
             // 
             // uC_HomeDashboard1
             // 
-            this.uC_HomeDashboard1.Location = new System.Drawing.Point(-14, 0);
+            this.uC_HomeDashboard1.Location = new System.Drawing.Point(174, 8);
             this.uC_HomeDashboard1.Name = "uC_HomeDashboard1";
             this.uC_HomeDashboard1.Size = new System.Drawing.Size(741, 492);
             this.uC_HomeDashboard1.TabIndex = 28;
@@ -277,11 +289,19 @@ namespace FleetInventorySystem
             // 
             // uC_AssignStock1
             // 
-            this.uC_AssignStock1.Location = new System.Drawing.Point(-4, 0);
+            this.uC_AssignStock1.Location = new System.Drawing.Point(188, 3);
             this.uC_AssignStock1.Name = "uC_AssignStock1";
             this.uC_AssignStock1.Size = new System.Drawing.Size(707, 494);
             this.uC_AssignStock1.TabIndex = 32;
             this.uC_AssignStock1.Visible = false;
+            // 
+            // uC_OfficeStock1
+            // 
+            this.uC_OfficeStock1.Location = new System.Drawing.Point(168, 8);
+            this.uC_OfficeStock1.Name = "uC_OfficeStock1";
+            this.uC_OfficeStock1.Size = new System.Drawing.Size(727, 496);
+            this.uC_OfficeStock1.TabIndex = 30;
+            this.uC_OfficeStock1.Visible = false;
             // 
             // Form1
             // 
@@ -295,6 +315,7 @@ namespace FleetInventorySystem
             this.Load += new System.EventHandler(this.Form1_Load);
             this.navPanel.ResumeLayout(false);
             this.navPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
             this.ResumeLayout(false);
@@ -329,6 +350,7 @@ namespace FleetInventorySystem
         private UC_AssignStock uC_AssignStock1;
         private UC_AddItem uC_AddItem1;
         private Label lblUserDetails;
+        private PictureBox pictureBox1;
     }
 }
 

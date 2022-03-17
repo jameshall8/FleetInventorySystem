@@ -108,7 +108,7 @@ namespace FleetInventorySystem
         private void btnSelectVan_Click(object sender, EventArgs e)
         {
             
-            if (Form1.Role != "Manager")
+            if (Form1.Role != "Admin" || Form1.Role != "AllocationStaff")
             {
                 MessageBox.Show("You do not have access to this page");
             }

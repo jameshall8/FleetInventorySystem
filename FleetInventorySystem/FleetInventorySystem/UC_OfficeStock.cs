@@ -40,7 +40,7 @@ namespace FleetInventorySystem
 
         private  void btnSelectEdit_Click(object sender, EventArgs e)
         {
-            if (Form1.Role != "Manager")
+            if (Form1.Role != "Admin")
             {
                 MessageBox.Show("You do not have access to this page");
             }
@@ -91,7 +91,7 @@ namespace FleetInventorySystem
 
         private void btnAssignStockPage_Click(object sender, EventArgs e)
         {
-            if (Form1.Role == "Manager")
+            if (Form1.Role == "Admin")
             {
 
                 Form1.CloseUserControls(Form1.Array);

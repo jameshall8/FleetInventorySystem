@@ -20,15 +20,20 @@ namespace FleetInventorySystem
         public UC_HomeDashboard()
         {
             InitializeComponent();
+            RefreshValues();
+            
+            
+        }
+
+        public void RefreshValues()
+        {
             getBelow50();
             getBelow20();
             getBelow5();
-            
+
             lblBelow50.Text = count50.ToString();
             lblBelow20.Text = count20.ToString();
             lblBelow5.Text = count5.ToString();
-            
-            
         }
 
         private void getBelow50()

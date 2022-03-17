@@ -100,14 +100,14 @@ namespace FleetInventorySystem
                 part.RestockTime = Convert.ToInt32(txtReorder.Text);
                 part.SupplierEmail = txtEmail.Text;
                 part.Barcode = Convert.ToInt32(txtBarcode.Text);
-                
-                double perc = (part.CurrentStock / part.MaxStock) * 100;
-                part.Percentage = Convert.ToInt32(perc);
+
+                decimal perc = (decimal)part.CurrentStock / part.MaxStock * 100;
+                part.Percentage = perc;
 
 
                 return part;
             }
-            catch (Exception e)
+            catch
             {
                 MessageBox.Show("Please check your inputs are the correct value type");
                 added = false;
