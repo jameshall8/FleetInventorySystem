@@ -62,17 +62,17 @@
             // comboSelectEdit
             // 
             this.comboSelectEdit.FormattingEnabled = true;
-            this.comboSelectEdit.Location = new System.Drawing.Point(631, 155);
+            this.comboSelectEdit.Location = new System.Drawing.Point(603, 155);
             this.comboSelectEdit.Name = "comboSelectEdit";
-            this.comboSelectEdit.Size = new System.Drawing.Size(121, 21);
+            this.comboSelectEdit.Size = new System.Drawing.Size(166, 21);
             this.comboSelectEdit.TabIndex = 2;
             this.comboSelectEdit.SelectedIndexChanged += new System.EventHandler(this.comboSelectEdit_SelectedIndexChanged);
             // 
             // btnSelectEdit
             // 
-            this.btnSelectEdit.Location = new System.Drawing.Point(656, 192);
+            this.btnSelectEdit.Location = new System.Drawing.Point(603, 192);
             this.btnSelectEdit.Name = "btnSelectEdit";
-            this.btnSelectEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectEdit.Size = new System.Drawing.Size(166, 23);
             this.btnSelectEdit.TabIndex = 3;
             this.btnSelectEdit.Text = "Edit";
             this.btnSelectEdit.UseVisualStyleBackColor = true;
@@ -80,9 +80,9 @@
             // 
             // btnAddItem
             // 
-            this.btnAddItem.Location = new System.Drawing.Point(656, 286);
+            this.btnAddItem.Location = new System.Drawing.Point(603, 286);
             this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(75, 23);
+            this.btnAddItem.Size = new System.Drawing.Size(166, 23);
             this.btnAddItem.TabIndex = 4;
             this.btnAddItem.Text = "Add Item";
             this.btnAddItem.UseVisualStyleBackColor = true;
@@ -90,9 +90,9 @@
             // 
             // btnAssignStockPage
             // 
-            this.btnAssignStockPage.Location = new System.Drawing.Point(603, 420);
+            this.btnAssignStockPage.Location = new System.Drawing.Point(603, 447);
             this.btnAssignStockPage.Name = "btnAssignStockPage";
-            this.btnAssignStockPage.Size = new System.Drawing.Size(166, 23);
+            this.btnAssignStockPage.Size = new System.Drawing.Size(166, 33);
             this.btnAssignStockPage.TabIndex = 5;
             this.btnAssignStockPage.Text = "Go to assign stock page ";
             this.btnAssignStockPage.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             // 
             // btnPopulate
             // 
-            this.btnPopulate.Location = new System.Drawing.Point(272, 78);
+            this.btnPopulate.Location = new System.Drawing.Point(146, 486);
             this.btnPopulate.Name = "btnPopulate";
             this.btnPopulate.Size = new System.Drawing.Size(141, 23);
             this.btnPopulate.TabIndex = 7;

@@ -33,7 +33,7 @@ namespace FleetInventorySystem
 
         public void refresh()
         {
-            lblProductName.Text = partname;
+            lblProductName.Text = barcodeNumber.ToString();
             getValuesToVariables();
 
         }

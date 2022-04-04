@@ -39,9 +39,9 @@
             // 
             // btnPopulate
             // 
-            this.btnPopulate.Location = new System.Drawing.Point(256, 68);
+            this.btnPopulate.Location = new System.Drawing.Point(544, 447);
             this.btnPopulate.Name = "btnPopulate";
-            this.btnPopulate.Size = new System.Drawing.Size(141, 23);
+            this.btnPopulate.Size = new System.Drawing.Size(171, 23);
             this.btnPopulate.TabIndex = 15;
             this.btnPopulate.Text = "Refresh Table";
             this.btnPopulate.UseVisualStyleBackColor = true;
@@ -69,25 +69,26 @@
             // 
             this.lblVanName.AutoSize = true;
             this.lblVanName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVanName.Location = new System.Drawing.Point(365, 22);
+            this.lblVanName.Location = new System.Drawing.Point(332, 22);
             this.lblVanName.Name = "lblVanName";
             this.lblVanName.Size = new System.Drawing.Size(128, 25);
             this.lblVanName.TabIndex = 8;
             this.lblVanName.Text = "Office Stock";
+            this.lblVanName.Click += new System.EventHandler(this.lblVanName_Click);
             // 
             // comboSelectMove
             // 
             this.comboSelectMove.FormattingEnabled = true;
-            this.comboSelectMove.Location = new System.Drawing.Point(594, 155);
+            this.comboSelectMove.Location = new System.Drawing.Point(544, 155);
             this.comboSelectMove.Name = "comboSelectMove";
-            this.comboSelectMove.Size = new System.Drawing.Size(121, 21);
+            this.comboSelectMove.Size = new System.Drawing.Size(171, 21);
             this.comboSelectMove.TabIndex = 10;
             // 
             // btnSelectAssign
             // 
-            this.btnSelectAssign.Location = new System.Drawing.Point(616, 182);
+            this.btnSelectAssign.Location = new System.Drawing.Point(544, 182);
             this.btnSelectAssign.Name = "btnSelectAssign";
-            this.btnSelectAssign.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectAssign.Size = new System.Drawing.Size(171, 23);
             this.btnSelectAssign.TabIndex = 11;
             this.btnSelectAssign.Text = "Move";
             this.btnSelectAssign.UseVisualStyleBackColor = true;

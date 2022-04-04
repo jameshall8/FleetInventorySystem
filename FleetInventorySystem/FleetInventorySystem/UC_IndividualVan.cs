@@ -223,5 +223,10 @@ namespace FleetInventorySystem
 
 
         }
+
+        private void lblVanName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

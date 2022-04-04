@@ -48,7 +48,7 @@
             // lblLname
             // 
             this.lblLname.AutoSize = true;
-            this.lblLname.Location = new System.Drawing.Point(265, 135);
+            this.lblLname.Location = new System.Drawing.Point(343, 197);
             this.lblLname.Name = "lblLname";
             this.lblLname.Size = new System.Drawing.Size(58, 13);
             this.lblLname.TabIndex = 0;
@@ -57,7 +57,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(242, 226);
+            this.lblPassword.Location = new System.Drawing.Point(320, 288);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(91, 13);
             this.lblPassword.TabIndex = 1;
@@ -66,7 +66,7 @@
             // lblEmailAddress
             // 
             this.lblEmailAddress.AutoSize = true;
-            this.lblEmailAddress.Location = new System.Drawing.Point(267, 265);
+            this.lblEmailAddress.Location = new System.Drawing.Point(345, 327);
             this.lblEmailAddress.Name = "lblEmailAddress";
             this.lblEmailAddress.Size = new System.Drawing.Size(73, 13);
             this.lblEmailAddress.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             // txtLname
             // 
-            this.txtLname.Location = new System.Drawing.Point(346, 135);
+            this.txtLname.Location = new System.Drawing.Point(424, 197);
             this.txtLname.Name = "txtLname";
             this.txtLname.Size = new System.Drawing.Size(148, 20);
             this.txtLname.TabIndex = 3;
@@ -82,14 +82,14 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(346, 262);
+            this.txtEmail.Location = new System.Drawing.Point(424, 324);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(148, 20);
             this.txtEmail.TabIndex = 4;
             // 
             // txtPassConfirm
             // 
-            this.txtPassConfirm.Location = new System.Drawing.Point(346, 223);
+            this.txtPassConfirm.Location = new System.Drawing.Point(424, 285);
             this.txtPassConfirm.Name = "txtPassConfirm";
             this.txtPassConfirm.Size = new System.Drawing.Size(148, 20);
             this.txtPassConfirm.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             this.lblNewUserTitle.AutoSize = true;
             this.lblNewUserTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewUserTitle.Location = new System.Drawing.Point(287, 31);
+            this.lblNewUserTitle.Location = new System.Drawing.Point(368, 41);
             this.lblNewUserTitle.Name = "lblNewUserTitle";
             this.lblNewUserTitle.Size = new System.Drawing.Size(169, 25);
             this.lblNewUserTitle.TabIndex = 6;
@@ -107,7 +107,7 @@
             // btnCreateNewUser
             // 
             this.btnCreateNewUser.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCreateNewUser.Location = new System.Drawing.Point(326, 347);
+            this.btnCreateNewUser.Location = new System.Drawing.Point(404, 409);
             this.btnCreateNewUser.Name = "btnCreateNewUser";
             this.btnCreateNewUser.Size = new System.Drawing.Size(75, 23);
             this.btnCreateNewUser.TabIndex = 7;
@@ -117,7 +117,7 @@
             // 
             // txtFname
             // 
-            this.txtFname.Location = new System.Drawing.Point(346, 94);
+            this.txtFname.Location = new System.Drawing.Point(424, 156);
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(148, 20);
             this.txtFname.TabIndex = 10;
@@ -125,7 +125,7 @@
             // lblFname
             // 
             this.lblFname.AutoSize = true;
-            this.lblFname.Location = new System.Drawing.Point(265, 94);
+            this.lblFname.Location = new System.Drawing.Point(343, 156);
             this.lblFname.Name = "lblFname";
             this.lblFname.Size = new System.Drawing.Size(57, 13);
             this.lblFname.TabIndex = 9;
@@ -133,7 +133,7 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(346, 182);
+            this.txtPass.Location = new System.Drawing.Point(424, 244);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(148, 20);
             this.txtPass.TabIndex = 12;
@@ -141,7 +141,7 @@
             // lblFirstname
             // 
             this.lblFirstname.AutoSize = true;
-            this.lblFirstname.Location = new System.Drawing.Point(265, 182);
+            this.lblFirstname.Location = new System.Drawing.Point(343, 244);
             this.lblFirstname.Name = "lblFirstname";
             this.lblFirstname.Size = new System.Drawing.Size(53, 13);
             this.lblFirstname.TabIndex = 11;
@@ -150,7 +150,7 @@
             // lblNewUserInfo
             // 
             this.lblNewUserInfo.AutoSize = true;
-            this.lblNewUserInfo.Location = new System.Drawing.Point(242, 390);
+            this.lblNewUserInfo.Location = new System.Drawing.Point(320, 452);
             this.lblNewUserInfo.Name = "lblNewUserInfo";
             this.lblNewUserInfo.Size = new System.Drawing.Size(227, 13);
             this.lblNewUserInfo.TabIndex = 8;
@@ -159,7 +159,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(267, 303);
+            this.label1.Location = new System.Drawing.Point(345, 365);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 13;
@@ -168,7 +168,7 @@
             // comboRole
             // 
             this.comboRole.FormattingEnabled = true;
-            this.comboRole.Location = new System.Drawing.Point(346, 300);
+            this.comboRole.Location = new System.Drawing.Point(424, 362);
             this.comboRole.Name = "comboRole";
             this.comboRole.Size = new System.Drawing.Size(148, 21);
             this.comboRole.TabIndex = 14;
@@ -194,7 +194,7 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblLname);
             this.Name = "UC_NewUser";
-            this.Size = new System.Drawing.Size(569, 488);
+            this.Size = new System.Drawing.Size(884, 561);
             this.ResumeLayout(false);
             this.PerformLayout();
 

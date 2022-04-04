@@ -42,7 +42,7 @@
             // 
             // btnSubmitOrder
             // 
-            this.btnSubmitOrder.Location = new System.Drawing.Point(284, 292);
+            this.btnSubmitOrder.Location = new System.Drawing.Point(398, 320);
             this.btnSubmitOrder.Name = "btnSubmitOrder";
             this.btnSubmitOrder.Size = new System.Drawing.Size(75, 23);
             this.btnSubmitOrder.TabIndex = 45;
@@ -53,7 +53,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(231, 227);
+            this.label4.Location = new System.Drawing.Point(345, 255);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 41;
@@ -62,7 +62,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(231, 176);
+            this.label3.Location = new System.Drawing.Point(345, 204);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 40;
@@ -71,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(204, 128);
+            this.label2.Location = new System.Drawing.Point(318, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 39;
@@ -79,21 +79,21 @@
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(311, 224);
+            this.txtAmount.Location = new System.Drawing.Point(425, 252);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(100, 20);
             this.txtAmount.TabIndex = 35;
             // 
             // txtBranch
             // 
-            this.txtBranch.Location = new System.Drawing.Point(311, 173);
+            this.txtBranch.Location = new System.Drawing.Point(425, 201);
             this.txtBranch.Name = "txtBranch";
             this.txtBranch.Size = new System.Drawing.Size(100, 20);
             this.txtBranch.TabIndex = 34;
             // 
             // txtManagerName
             // 
-            this.txtManagerName.Location = new System.Drawing.Point(311, 125);
+            this.txtManagerName.Location = new System.Drawing.Point(425, 153);
             this.txtManagerName.Name = "txtManagerName";
             this.txtManagerName.Size = new System.Drawing.Size(100, 20);
             this.txtManagerName.TabIndex = 33;
@@ -102,7 +102,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(143, 68);
+            this.label1.Location = new System.Drawing.Point(257, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(373, 20);
             this.label1.TabIndex = 32;
@@ -112,7 +112,7 @@
             // 
             this.lblReorderName.AutoSize = true;
             this.lblReorderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReorderName.Location = new System.Drawing.Point(229, 15);
+            this.lblReorderName.Location = new System.Drawing.Point(343, 43);
             this.lblReorderName.Name = "lblReorderName";
             this.lblReorderName.Size = new System.Drawing.Size(182, 25);
             this.lblReorderName.TabIndex = 31;
@@ -122,7 +122,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(190, 344);
+            this.label5.Location = new System.Drawing.Point(304, 372);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(263, 20);
             this.label5.TabIndex = 46;
@@ -143,7 +143,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblReorderName);
             this.Name = "UC_Reorder";
-            this.Size = new System.Drawing.Size(615, 500);
+            this.Size = new System.Drawing.Size(726, 500);
             this.ResumeLayout(false);
             this.PerformLayout();
 

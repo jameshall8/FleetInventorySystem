@@ -194,6 +194,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\ribbon.png" />
     <None Include="Resources\home.png" />
     <None Include="Resources\emoji swear.jpg" />
   </ItemGroup>

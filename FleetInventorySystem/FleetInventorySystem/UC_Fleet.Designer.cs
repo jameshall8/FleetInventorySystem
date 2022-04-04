@@ -39,7 +39,7 @@
             // 
             // btnPopulateVans
             // 
-            this.btnPopulateVans.Location = new System.Drawing.Point(280, 82);
+            this.btnPopulateVans.Location = new System.Drawing.Point(630, 257);
             this.btnPopulateVans.Name = "btnPopulateVans";
             this.btnPopulateVans.Size = new System.Drawing.Size(141, 23);
             this.btnPopulateVans.TabIndex = 15;
@@ -88,11 +88,12 @@
             // 
             this.lblVanTitle.AutoSize = true;
             this.lblVanTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVanTitle.Location = new System.Drawing.Point(389, 36);
+            this.lblVanTitle.Location = new System.Drawing.Point(389, 39);
             this.lblVanTitle.Name = "lblVanTitle";
             this.lblVanTitle.Size = new System.Drawing.Size(61, 25);
             this.lblVanTitle.TabIndex = 8;
             this.lblVanTitle.Text = "Vans";
+            this.lblVanTitle.Click += new System.EventHandler(this.lblVanTitle_Click);
             // 
             // UC_Fleet
             // 
