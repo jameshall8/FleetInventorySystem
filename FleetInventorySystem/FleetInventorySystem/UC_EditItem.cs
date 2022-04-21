@@ -87,13 +87,19 @@ namespace FleetInventorySystem
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            if (deleteProduct())
+            if (MessageBox.Show("Are you sure you wish to delete?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show("Item successfully deleted");
-                Form1.CloseUserControls(Form1.Array);
-                Form1.OfficeStockUC.Show();
-                Form1.OfficeStockUC.refreshTable();
+                if (deleteProduct())
+                {
+                    MessageBox.Show("Item successfully deleted");
+                    Form1.CloseUserControls(Form1.Array);
+                    Form1.OfficeStockUC.Show();
+                    Form1.OfficeStockUC.refreshTable();
+                }
             }
+
+
+            
 
         }
 
@@ -107,7 +113,7 @@ namespace FleetInventorySystem
             Form1.ReorderUC.MaxStock = maxStock;
 
             Form1.ReorderUC.refreshForm();
-        }
+        },
 
         private bool deleteProduct()
         {
